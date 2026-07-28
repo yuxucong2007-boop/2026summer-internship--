@@ -1,0 +1,24 @@
+{
+  "id": "conv-1785127236424-7j3anezr3",
+  "providerId": "claude",
+  "title": "请你根据 karpathy 的这套方法，帮我把仓库里的文件夹的结构给建立起来 @karpathy的w...",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1785127236424,
+  "updatedAt": 1785134718285,
+  "lastResponseAt": 1785134237776,
+  "sessionId": "32a43bba-4116-4294-b44e-68c3eb75062d",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "32a43bba-4116-4294-b44e-68c3eb75062d"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 2037,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 25216,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 27253,
+    "percentage": 14
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "conv-1785134952488-5ma8m78bh",
+  "providerId": "claude",
+  "title": "Add new article",
+  "titleGenerationStatus": "success",
+  "createdAt": 1785134952488,
+  "updatedAt": 1785156946220,
+  "lastResponseAt": 1785148422795,
+  "sessionId": "c36fd7e0-0a3b-440b-bbc2-cf583d7d1c05",
+  "selectedModel": "haiku",
+  "providerState": {
+    "previousProviderSessionIds": [
+      "f1152dd9-6829-4f32-b542-c6d186c154af"
+    ],
+    "providerSessionId": "c36fd7e0-0a3b-440b-bbc2-cf583d7d1c05"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 508,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 26880,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 27388,
+    "percentage": 14
+  }
+}

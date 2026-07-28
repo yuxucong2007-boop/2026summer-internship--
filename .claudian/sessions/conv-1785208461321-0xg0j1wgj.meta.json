@@ -1,0 +1,24 @@
+{
+  "id": "conv-1785208461321-0xg0j1wgj",
+  "providerId": "claude",
+  "title": "删除了一些文章请把相关那些分支概念删除",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1785208461326,
+  "updatedAt": 1785214135839,
+  "lastResponseAt": 1785214135839,
+  "sessionId": "d82ae352-e4ca-468a-b8c5-d93a1b984fb9",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "d82ae352-e4ca-468a-b8c5-d93a1b984fb9"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 247,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 37376,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 37623,
+    "percentage": 19
+  }
+}

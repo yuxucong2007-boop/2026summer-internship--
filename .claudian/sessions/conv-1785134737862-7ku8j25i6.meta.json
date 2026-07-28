@@ -1,0 +1,23 @@
+{
+  "id": "conv-1785134737862-7ku8j25i6",
+  "providerId": "claude",
+  "title": "Install Obsidian skills from GitHub",
+  "titleGenerationStatus": "success",
+  "createdAt": 1785134737862,
+  "updatedAt": 1785134921817,
+  "sessionId": "a7731488-05af-47f6-ba6b-fa75168dc7ab",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "a7731488-05af-47f6-ba6b-fa75168dc7ab"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 108,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 20352,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 20460,
+    "percentage": 10
+  }
+}

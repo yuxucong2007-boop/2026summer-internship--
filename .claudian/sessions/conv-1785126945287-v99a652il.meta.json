@@ -1,0 +1,12 @@
+{
+  "id": "conv-1785126945287-v99a652il",
+  "providerId": "claude",
+  "title": "请你根据 karpathy 的这套方法，帮我把仓库里的文件夹的结构给建立起来",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1785126945294,
+  "updatedAt": 1785127082031,
+  "lastResponseAt": 1785126945329,
+  "sessionId": null,
+  "selectedModel": "haiku",
+  "currentNote": "karpathy的wiki方法论.md"
+}
