@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-27
+updated: 2026-07-28
 ---
 
 # Wiki 操作日志
@@ -18,3 +18,21 @@ updated: 2026-07-27
 - 原始文章 `Koszul Binomial Edge Ideals` 和 `企业AI工作空间与专业智能体平台产品规划书` 已被删除
 - 移除所有相关的概念页、实体页、摘要页
 - 更新 index 和 log 以反映当前状态
+
+## [2026-07-28] ingest | AI基本知识 —— 大规模摄入
+
+- 原始资料：`raw/articles/AI基本知识.md`（AI 大模型生态 10 大核心概念）
+- 新建摘要：[[wiki/summaries/ai基本知识]]
+- 新建概念页（10 个）：
+  - [[wiki/concepts/llm]]
+  - [[wiki/concepts/prompt-engineering]]
+  - [[wiki/concepts/ai-agent]]
+  - [[wiki/concepts/rag]]
+  - [[wiki/concepts/mcp]]
+  - [[wiki/concepts/harness-engineering]]
+  - [[wiki/concepts/embedding]]
+  - [[wiki/concepts/vector-database]]
+  - [[wiki/concepts/fine-tuning]]
+  - [[wiki/concepts/幻觉-hallucination]]
+- 新建综合页：[[wiki/synthesis/ai-ecology]]（AI 技术栈四层架构全景）
+- 更新 `wiki/index.md` 反映所有新页面
