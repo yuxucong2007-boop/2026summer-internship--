@@ -1,1 +1,1 @@
-![[Gemini_Generated_Image_d6ev9wd6ev9wd6ev.png]]
+![[Gemini_Generated_Image_d6ev9wd6ev9wd6ev.png|697]]
