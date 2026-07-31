@@ -1,0 +1,795 @@
+{
+  "id": "conv-1785461062490-nwjpl4x3z",
+  "providerId": "claude",
+  "title": "Organize notes by concept with bidirectional links",
+  "titleGenerationStatus": "success",
+  "createdAt": 1785461062493,
+  "updatedAt": 1785461856095,
+  "lastResponseAt": 1785461856095,
+  "sessionId": "2f3922b1-df6a-41bb-9986-ac9036eb88e7",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "2f3922b1-df6a-41bb-9986-ac9036eb88e7",
+    "subagentData": {
+      "call_00_hfyizlGs7BBjPutAZhvp2996": {
+        "id": "call_00_hfyizlGs7BBjPutAZhvp2996",
+        "description": "Deep scan vault structure and content",
+        "prompt": "I need a thorough analysis of this Obsidian vault at D:\\yxccangku. Please do the following:\n\n1. List ALL files and folders (excluding .git, .claudian, .obsidian) to understand the full structure\n2. For EVERY markdown file (except those in .obsidian), read the first 20-30 lines to see:\n   - YAML frontmatter (tags, categories, aliases, etc.)\n   - Wiki-links `[[...]]` to other notes\n   - Tags (#tagname)\n   - Content structure (headings)\n3. Identify ALL wiki-links that exist between notes to map the current linking graph\n4. Look at the daily notes to see their format and what they link to\n5. Check the `AI知识库/.obsidian/` folder - it seems like a nested vault configuration\n\nReport back with:\n- Complete directory tree (folders and file counts)\n- For each note: its frontmatter fields, what other notes it links TO, what tags it uses\n- Missing/broken wiki-links if any\n- Whether the nested AI知识库 has its own .obsidian config\n- Summary of current organizational patterns",
+        "mode": "async",
+        "isExpanded": false,
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_00_eahPrAePVm0hS0Agobwz6180",
+            "name": "Bash",
+            "input": {
+              "command": "find D:/yxccangku -not -path '*/\\.git/*' -not -path '*/\\.claudian/*' -not -path '*/.obsidian/*' -type f -o -type d | sort",
+              "description": "List all files and folders excluding .git, .claudian, .obsidian"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "D:/yxccangku\nD:/yxccangku/.claudian\nD:/yxccangku/.claudian/sessions\nD:/yxccangku/.git\nD:/yxccangku/.git/hooks\nD:/yxccangku/.git/info\nD:/yxccangku/.git/logs\nD:/yxccangku/.git/logs/refs\nD:/yxccangku/.git/logs/refs/heads\nD:/yxccangku/.git/logs/refs/remotes\nD:/yxccangku/.git/logs/refs/remotes/origin\nD:/yxccangku/.git/objects\nD:/yxccangku/.git/objects/00\nD:/yxccangku/.git/objects/01\nD:/yxccangku/.git/objects/02\nD:/yxccangku/.git/objects/03\nD:/yxccangku/.git/objects/04\nD:/yxccangku/.git/objects/05\nD:/yxccangku/.git/objects/06\nD:/yxccangku/.git/objects/07\nD:/yxccangku/.git/objects/08\nD:/yxccangku/.git/objects/09\nD:/yxccangku/.git/objects/0b\nD:/yxccangku/.git/objects/0c\nD:/yxccangku/.git/objects/0e\nD:/yxccangku/.git/objects/10\nD:/yxccangku/.git/objects/12\nD:/yxccangku/.git/objects/13\nD:/yxccangku/.git/objects/14\nD:/yxccangku/.git/objects/15\nD:/yxccangku/.git/objects/17\nD:/yxccangku/.git/objects/18\nD:/yxccangku/.git/objects/19\nD:/yxccangku/.git/objects/1a\nD:/yxccangku/.git/objects/1b\nD:/yxccangku/.git/objects/1c\nD:/yxccangku/.git/objects/1d\nD:/yxccangku/.git/objects/1f\nD:/yxccangku/.git/objects/21\nD:/yxccangku/.git/objects/22\nD:/yxccangku/.git/objects/25\nD:/yxccangku/.git/objects/26\nD:/yxccangku/.git/objects/28\nD:/yxccangku/.git/objects/29\nD:/yxccangku/.git/objects/2d\nD:/yxccangku/.git/objects/2e\nD:/yxccangku/.git/objects/2f\nD:/yxccangku/.git/objects/30\nD:/yxccangku/.git/objects/32\nD:/yxccangku/.git/objects/33\nD:/yxccangku/.git/objects/34\nD:/yxccangku/.git/objects/35\nD:/yxccangku/.git/objects/36\nD:/yxccangku/.git/objects/37\nD:/yxccangku/.git/objects/38\nD:/yxccangku/.git/objects/39\nD:/yxccangku/.git/objects/3a\nD:/yxccangku/.git/objects/3c\nD:/yxccangku/.git/objects/3d\nD:/yxccangku/.git/objects/3e\nD:/yxccangku/.git/objects/3f\nD:/yxccangku/.git/objects/40\nD:/yxccangku/.git/objects/41\nD:/yxccangku/.git/objects/42\nD:/yxccangku/.git/objects/44\nD:/yxccangku/.git/objects/45\nD:/yxccangku/.git/objects/46\nD:/yxccangku/.git/objects/47\nD:/yxccangku/.git/objects/48\nD:/yxccangku/.git/objects/49\nD:/yxccangku/.git/objects/4a\nD:/yxccangku/.git/objects/4b\nD:/yxccangku/.git/objects/4d\nD:/yxccangku/.git/objects/4e\nD:/yxccangku/.git/objects/4f\nD:/yxccangku/.git/objects/50\nD:/yxccangku/.git/objects/51\nD:/yxccangku/.git/objects/52\nD:/yxccangku/.git/objects/53\nD:/yxccangku/.git/objects/54\nD:/yxccangku/.git/objects/55\nD:/yxccangku/.git/objects/56\nD:/yxccangku/.git/objects/57\nD:/yxccangku/.git/objects/5a\nD:/yxccangku/.git/objects/5b\nD:/yxccangku/.git/objects/5c\nD:/yxccangku/.git/objects/5f\nD:/yxccangku/.git/objects/60\nD:/yxccangku/.git/objects/61\nD:/yxccangku/.git/objects/63\nD:/yxccangku/.git/objects/66\nD:/yxccangku/.git/objects/67\nD:/yxccangku/.git/objects/68\nD:/yxccangku/.git/objects/69\nD:/yxccangku/.git/objects/6a\nD:/yxccangku/.git/objects/6c\nD:/yxccangku/.git/objects/6d\nD:/yxccangku/.git/objects/6e\nD:/yxccangku/.git/objects/70\nD:/yxccangku/.git/objects/71\nD:/yxccangku/.git/objects/75\nD:/yxccangku/.git/objects/76\nD:/yxccangku/.git/objects/78\nD:/yxccangku/.git/objects/79\nD:/yxccangku/.git/objects/7a\nD:/yxccangku/.git/objects/7b\nD:/yxccangku/.git/objects/7c\nD:/yxccangku/.git/objects/7d\nD:/yxccangku/.git/objects/7f\nD:/yxccangku/.git/objects/80\nD:/yxccangku/.git/objects/81\nD:/yxccangku/.git/objects/82\nD:/yxccangku/.git/objects/83\nD:/yxccangku/.git/objects/85\nD:/yxccangku/.git/objects/86\nD:/yxccangku/.git/objects/87\nD:/yxccangku/.git/objects/88\nD:/yxccangku/.git/objects/89\nD:/yxccangku/.git/objects/8a\nD:/yxccangku/.git/objects/8b\nD:/yxccangku/.git/objects/8c\nD:/yxccangku/.git/objects/8d\nD:/yxccangku/.git/objects/8e\nD:/yxccangku/.git/objects/8f\nD:/yxccangku/.git/objects/90\nD:/yxccangku/.git/objects/91\nD:/yxccangku/.git/objects/92\nD:/yxccangku/.git/objects/93\nD:/yxccangku/.git/objects/95\nD:/yxccangku/.git/objects/96\nD:/yxccangku/.git/objects/98\nD:/yxccangku/.git/objects/9a\nD:/yxccangku/.git/objects/9c\nD:/yxccangku/.git/objects/9d\nD:/yxccangku/.git/objects/9e\nD:/yxccangku/.git/objects/a0\nD:/yxccangku/.git/objects/a1\nD:/yxccangku/.git/objects/a2\nD:/yxccangku/.git/objects/a3\nD:/yxccangku/.git/objects/a4\nD:/yxccangku/.git/objects/a5\nD:/yxccangku/.git/objects/a6\nD:/yxccangku/.git/objects/a7\nD:/yxccangku/.git/objects/a8\nD:/yxccangku/.git/objects/aa\nD:/yxccangku/.git/objects/ab\nD:/yxccangku/.git/objects/ae\nD:/yxccangku/.git/objects/af\nD:/yxccangku/.git/objects/b0\nD:/yxccangku/.git/objects/b1\nD:/yxccangku/.git/objects/b2\nD:/yxccangku/.git/objects/b3\nD:/yxccangku/.git/objects/b6\nD:/yxccangku/.git/objects/b7\nD:/yxccangku/.git/objects/b9\nD:/yxccangku/.git/objects/bb\nD:/yxccangku/.git/objects/bc\nD:/yxccangku/.git/objects/bd\nD:/yxccangku/.git/objects/bf\nD:/yxccangku/.git/objects/c0\nD:/yxccangku/.git/objects/c1\nD:/yxccangku/.git/objects/c2\nD:/yxccangku/.git/objects/c3\nD:/yxccangku/.git/objects/c4\nD:/yxccangku/.git/objects/c5\nD:/yxccangku/.git/objects/c6\nD:/yxccangku/.git/objects/c8\nD:/yxccangku/.git/objects/c9\nD:/yxccangku/.git/objects/ca\nD:/yxccangku/.git/objects/cb\nD:/yxccangku/.git/objects/cc\nD:/yxccangku/.git/objects/cd\nD:/yxccangku/.git/objects/ce\nD:/yxccangku/.git/objects/cf\nD:/yxccangku/.git/objects/d1\nD:/yxccangku/.git/objects/d2\nD:/yxccangku/.git/objects/d3\nD:/yxccangku/.git/objects/d4\nD:/yxccangku/.git/objects/d5\nD:/yxccangku/.git/objects/d6\nD:/yxccangku/.git/objects/d7\nD:/yxccangku/.git/objects/d8\nD:/yxccangku/.git/objects/d9\nD:/yxccangku/.git/objects/da\nD:/yxccangku/.git/objects/db\nD:/yxccangku/.git/objects/dd\nD:/yxccangku/.git/objects/e1\nD:/yxccangku/.git/objects/e2\nD:/yxccangku/.git/objects/e3\nD:/yxccangku/.git/objects/e4\nD:/yxccangku/.git/objects/e5\nD:/yxccangku/.git/objects/e6\nD:/yxccangku/.git/objects/e7\nD:/yxccangku/.git/objects/e8\nD:/yxccangku/.git/objects/e9\nD:/yxccangku/.git/objects/ea\nD:/yxccangku/.git/objects/eb\nD:/yxccangku/.git/objects/ec\nD:/yxccangku/.git/objects/ee\nD:/yxccangku/.git/objects/ef\nD:/yxccangku/.git/objects/f0\nD:/yxccangku/.git/objects/f1\nD:/yxccangku/.git/objects/f2\nD:/yxccangku/.git/objects/f3\nD:/yxccangku/.git/objects/f4\nD:/yxccangku/.git/objects/f5\nD:/yxccangku/.git/objects/f6\nD:/yxccangku/.git/objects/f7\nD:/yxccangku/.git/objects/f9\nD:/yxccangku/.git/objects/fb\nD:/yxccangku/.git/objects/fc\nD:/yxccangku/.git/objects/fd\nD:/yxccangku/.git/objects/fe\nD:/yxccangku/.git/objects/ff\nD:/yxccangku/.git/objects/info\nD:/yxccangku/.git/objects/pack\nD:/yxccangku/.git/refs\nD:/yxccangku/.git/refs/heads\nD:/yxccangku/.git/refs/remotes\nD:/yxccangku/.git/refs/remotes/origin\nD:/yxccangku/.git/refs/tags\nD:/yxccangku/.gitignore\nD:/yxccangku/.obsidian\nD:/yxccangku/.obsidian/plugins\nD:/yxccangku/.obsidian/plugins/custom-sort\nD:/yxccangku/.obsidian/plugins/defuddle\nD:/yxccangku/.obsidian/plugins/json-canvas\nD:/yxccangku/.obsidian/plugins/json-canvas/references\nD:/yxccangku/.obsidian/plugins/obsidian-bases\nD:/yxccangku/.obsidian/plugins/obsidian-bases/references\nD:/yxccangku/.obsidian/plugins/obsidian-cli\nD:/yxccangku/.obsidian/plugins/obsidian-git\nD:/yxccangku/.obsidian/plugins/obsidian-markdown\nD:/yxccangku/.obsidian/plugins/obsidian-markdown/references\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main/.claude-plugin\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main/skills\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main/skills/defuddle\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main/skills/json-canvas\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main/skills/json-canvas/references\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main/skills/obsidian-bases\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main/skills/obsidian-bases/references\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main/skills/obsidian-cli\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main/skills/obsidian-markdown\nD:/yxccangku/.obsidian/plugins/obsidian-skills-main/skills/obsidian-markdown/references\nD:/yxccangku/.obsidian/plugins/obsidian42-brat\nD:/yxccangku/.obsidian/plugins/realclaudian\nD:/yxccangku/AI知识库\nD:/yxccangku/AI知识库/.obsidian\nD:/yxccangku/AI知识库/01-AI概念\nD:/yxccangku/AI知识库/01-AI概念/Agent智能体.md\nD:/yxccangku/AI知识库/01-AI概念/Fine-tuning微调.md\nD:/yxccangku/AI知识库/01-AI概念/LLM⼤语⾔模型.md\nD:/yxccangku/AI知识库/01-AI概念/MCP协议.md\nD:/yxccangku/AI知识库/01-AI概念/Prompt Engineering.md\nD:/yxccangku/AI知识库/01-AI概念/RAG检索增强⽣成.md\nD:/yxccangku/AI知识库/01-AI概念/向量数据库与Embedding.md\nD:/yxccangku/AI知识库/02-AI⼯具\nD:/yxccangku/AI知识库/02-AI⼯具/Claude\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude体验.md\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude使用指南.md\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/MainWindow.cpp\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/MainWindow.h\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/MainWindow.ui\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/MainWindow_ui.cpp\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/MainWindow_ui.h\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/PROJECT_SUMMARY.md\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/QUICKSTART.md\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/README.md\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/StatusIndicator.cpp\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/StatusIndicator.h\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/StyleSheet.qss\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/UI_GUIDE.md\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/WindChartWidget.cpp\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/WindChartWidget.h\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/WindFieldRadar.pro\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/WindFieldRadar.pro.user\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/main.cpp\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/智能风场界面开发.md\nD:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/界面效果图.png\nD:/yxccangku/AI知识库/02-AI⼯具/Codex\nD:/yxccangku/AI知识库/02-AI⼯具/Codex/Codex体验.md\nD:/yxccangku/AI知识库/02-AI⼯具/Codex/Codex使用指南.md\nD:/yxccangku/AI知识库/02-AI⼯具/Codex/Codex项目\nD:/yxccangku/AI知识库/02-AI⼯具/Codex/Codex项目/ai小游戏.png\nD:/yxccangku/AI知识库/02-AI⼯具/Codex/Codex项目/介绍ppt.md\nD:/yxccangku/AI知识库/02-AI⼯具/Codex/Codex项目/类马里奥小游戏.md\nD:/yxccangku/AI知识库/02-AI⼯具/Codex/index.html\nD:/yxccangku/AI知识库/02-AI⼯具/Codex/obsidian配置与插件.md\nD:/yxccangku/AI知识库/02-AI⼯具/Codex/skybound_sprout.exe\nD:/yxccangku/AI知识库/02-AI⼯具/workbuddy\nD:/yxccangku/AI知识库/02-AI⼯具/workbuddy/Pasted image 20260730163133.png\nD:/yxccangku/AI知识库/02-AI⼯具/workbuddy/obsidian的配置和插件.md\nD:/yxccangku/AI知识库/02-AI⼯具/workbuddy/workbuddy使用.md\nD:/yxccangku/AI知识库/02-AI⼯具/workbuddy/workbuddy功能脑图.md\nD:/yxccangku/AI知识库/02-AI⼯具/workbuddy/workbuddy功能脑图.png\nD:/yxccangku/AI知识库/02-AI⼯具/workbuddy/workbuddy学习.md\nD:/yxccangku/AI知识库/工具对比\nD:/yxccangku/AI知识库/工具对比/AI助手横向对比.md\nD:/yxccangku/AI知识库/每日日报\nD:/yxccangku/AI知识库/每日日报/2026-07-27-日报.md\nD:/yxccangku/AI知识库/每日日报/2026-07-28-日报.md\nD:/yxccangku/AI知识库/每日日报/2026-07-29-日报.md\nD:/yxccangku/AI知识库/每日日报/2026-07-30-日报.md\nD:/yxccangku/git初步使用\nD:/yxccangku/git初步使用/git初步使用.md\nD:/yxccangku/karpathy知识库\nD:/yxccangku/karpathy知识库/karpathy的wiki方法论.md\nD:/yxccangku/karpathy知识库/raw\nD:/yxccangku/karpathy知识库/raw/articles\nD:/yxccangku/karpathy知识库/raw/articles/AI基本知识.md\nD:/yxccangku/karpathy知识库/raw/assets\nD:/yxccangku/karpathy知识库/raw/books\nD:/yxccangku/karpathy知识库/system\nD:/yxccangku/karpathy知识库/system/CLAUDE.md\nD:/yxccangku/karpathy知识库/system/templates\nD:/yxccangku/karpathy知识库/system/templates/concept-template.md\nD:/yxccangku/karpathy知识库/system/templates/entity-template.md\nD:/yxccangku/karpathy知识库/system/templates/summary-template.md\nD:/yxccangku/karpathy知识库/wiki\nD:/yxccangku/karpathy知识库/wiki/concepts\nD:/yxccangku/karpathy知识库/wiki/concepts/ai-agent.md\nD:/yxccangku/karpathy知识库/wiki/concepts/embedding.md\nD:/yxccangku/karpathy知识库/wiki/concepts/fine-tuning.md\nD:/yxccangku/karpathy知识库/wiki/concepts/harness-engineering.md\nD:/yxccangku/karpathy知识库/wiki/concepts/llm.md\nD:/yxccangku/karpathy知识库/wiki/concepts/mcp.md\nD:/yxccangku/karpathy知识库/wiki/concepts/prompt-engineering.md\nD:/yxccangku/karpathy知识库/wiki/concepts/rag.md\nD:/yxccangku/karpathy知识库/wiki/concepts/vector-database.md\nD:/yxccangku/karpathy知识库/wiki/concepts/幻觉-hallucination.md\nD:/yxccangku/karpathy知识库/wiki/entities\nD:/yxccangku/karpathy知识库/wiki/index.md\nD:/yxccangku/karpathy知识库/wiki/log.md\nD:/yxccangku/karpathy知识库/wiki/queries\nD:/yxccangku/karpathy知识库/wiki/summaries\nD:/yxccangku/karpathy知识库/wiki/summaries/ai基本知识.md\nD:/yxccangku/karpathy知识库/wiki/synthesis\nD:/yxccangku/karpathy知识库/wiki/synthesis/ai-ecology.md\nD:/yxccangku/karpathy知识库/命名.md"
+          },
+          {
+            "id": "call_01_p3HCLwH5Pqh9ovG3OfzI7564",
+            "name": "Glob",
+            "input": {
+              "path": "D:\\yxccangku",
+              "pattern": "**/*.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "karpathy知识库\\system\\CLAUDE.md\nkarpathy知识库\\system\\templates\\summary-template.md\nkarpathy知识库\\system\\templates\\concept-template.md\nkarpathy知识库\\system\\templates\\entity-template.md\nkarpathy知识库\\karpathy的wiki方法论.md\nkarpathy知识库\\命名.md\nkarpathy知识库\\raw\\articles\\AI基本知识.md\n.obsidian\\plugins\\defuddle\\SKILL.md\n.obsidian\\plugins\\json-canvas\\references\\EXAMPLES.md\n.obsidian\\plugins\\json-canvas\\SKILL.md\n.obsidian\\plugins\\obsidian-bases\\references\\FUNCTIONS_REFERENCE.md\n.obsidian\\plugins\\obsidian-bases\\SKILL.md\n.obsidian\\plugins\\obsidian-cli\\SKILL.md\n.obsidian\\plugins\\obsidian-markdown\\references\\CALLOUTS.md\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md\n.obsidian\\plugins\\obsidian-markdown\\references\\PROPERTIES.md\n.obsidian\\plugins\\obsidian-skills-main\\README.md\n.obsidian\\plugins\\obsidian-skills-main\\skills\\defuddle\\SKILL.md\n.obsidian\\plugins\\obsidian-skills-main\\skills\\json-canvas\\SKILL.md\n.obsidian\\plugins\\obsidian-skills-main\\skills\\json-canvas\\references\\EXAMPLES.md\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-bases\\SKILL.md\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-bases\\references\\FUNCTIONS_REFERENCE.md\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-cli\\SKILL.md\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\CALLOUTS.md\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\PROPERTIES.md\nAI知识库\\02-AI⼯具\\Claude\\Claude使用指南.md\nAI知识库\\工具对比\\AI助手横向对比.md\nkarpathy知识库\\wiki\\summaries\\ai基本知识.md\nkarpathy知识库\\wiki\\concepts\\llm.md\nkarpathy知识库\\wiki\\concepts\\ai-agent.md\nkarpathy知识库\\wiki\\concepts\\rag.md\nkarpathy知识库\\wiki\\concepts\\mcp.md\nkarpathy知识库\\wiki\\concepts\\prompt-engineering.md\nkarpathy知识库\\wiki\\concepts\\harness-engineering.md\nkarpathy知识库\\wiki\\concepts\\embedding.md\nkarpathy知识库\\wiki\\concepts\\vector-database.md\nkarpathy知识库\\wiki\\concepts\\fine-tuning.md\nkarpathy知识库\\wiki\\concepts\\幻觉-hallucination.md\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md\nkarpathy知识库\\wiki\\index.md\nkarpathy知识库\\wiki\\log.md\nAI知识库\\每日日报\\2026-07-27-日报.md\nAI知识库\\01-AI概念\\Prompt Engineering.md\nAI知识库\\01-AI概念\\LLM⼤语⾔模型.md\nAI知识库\\01-AI概念\\Agent智能体.md\nAI知识库\\01-AI概念\\RAG检索增强⽣成.md\nAI知识库\\01-AI概念\\向量数据库与Embedding.md\nAI知识库\\01-AI概念\\MCP协议.md\nAI知识库\\01-AI概念\\Fine-tuning微调.md\nAI知识库\\每日日报\\2026-07-28-日报.md\ngit初步使用\\git初步使用.md\nAI知识库\\02-AI⼯具\\Claude\\Claude项目\\fengchang\\README.md\nAI知识库\\02-AI⼯具\\Claude\\Claude项目\\fengchang\\UI_GUIDE.md\nAI知识库\\02-AI⼯具\\Claude\\Claude项目\\fengchang\\QUICKSTART.md\nAI知识库\\02-AI⼯具\\Claude\\Claude项目\\fengchang\\PROJECT_SUMMARY.md\nAI知识库\\02-AI⼯具\\Claude\\Claude项目\\fengchang\\智能风场界面开发.md\nAI知识库\\02-AI⼯具\\Codex\\Codex使用指南.md\nAI知识库\\02-AI⼯具\\Codex\\obsidian配置与插件.md\nAI知识库\\02-AI⼯具\\Codex\\Codex项目\\类马里奥小游戏.md\nAI知识库\\02-AI⼯具\\Codex\\Codex体验.md\nAI知识库\\02-AI⼯具\\Codex\\Codex项目\\介绍ppt.md\nAI知识库\\02-AI⼯具\\workbuddy\\obsidian的配置和插件.md\nAI知识库\\02-AI⼯具\\Claude\\Claude体验.md\nAI知识库\\02-AI⼯具\\workbuddy\\workbuddy学习.md\nAI知识库\\02-AI⼯具\\workbuddy\\workbuddy功能脑图.md\nAI知识库\\每日日报\\2026-07-29-日报.md\nAI知识库\\每日日报\\2026-07-30-日报.md\nAI知识库\\02-AI⼯具\\workbuddy\\workbuddy使用.md"
+          },
+          {
+            "id": "call_02_pYqAj4ksJBKNrrzOfcVH8282",
+            "name": "Bash",
+            "input": {
+              "command": "ls -la \"D:/yxccangku/AI知识库/.obsidian/\" 2>/dev/null || echo \"No nested .obsidian found at that path\"",
+              "description": "Check nested AI知识库/.obsidian/ folder"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "total 15\ndrwxr-xr-x 1 Yu 197121    0 Jul 28 14:24 .\ndrwxr-xr-x 1 Yu 197121    0 Jul 29 14:22 ..\n-rw-r--r-- 1 Yu 197121    2 Jul 28 14:24 app.json\n-rw-r--r-- 1 Yu 197121    2 Jul 28 14:24 appearance.json\n-rw-r--r-- 1 Yu 197121  728 Jul 28 14:24 core-plugins.json\n-rw-r--r-- 1 Yu 197121  514 Jul 28 14:24 graph.json\n-rw-r--r-- 1 Yu 197121 5163 Jul 28 14:24 workspace.json"
+          },
+          {
+            "id": "call_00_Y61BZ8lvSmhHykGMsDRd5641",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/karpathy的wiki方法论.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t```SQL\n2\t# LLM Wiki\n3\t\n4\tA pattern for building personal knowledge bases using LLMs.\n5\t\n6\tThis is an idea file, it is designed to be copy pasted to your own LLM Agent (e.g. OpenAI Codex, Claude Code, OpenCode / Pi, or etc.). Its goal is to communicate the high level idea, but your agent will build out the specifics in collaboration with you.\n7\t\n8\t## The core idea\n9\t\n10\tMost people's experience with LLMs and documents looks like RAG: you upload a collection of files, the LLM retrieves relevant chunks at query time, and generates an answer. This works, but the LLM is rediscovering knowledge from scratch on every question. There's no accumulation. Ask a subtle question that requires synthesizing five documents, and the LLM has to find and piece together the relevant fragments every time. Nothing is built up. NotebookLM, ChatGPT file uploads, and most RAG systems work this way.\n11\t\n12\tThe idea here is different. Instead of just retrieving from raw documents at query time, the LLM **incrementally builds and maintains a persistent wiki** — a structured, interlinked collection of markdown files that sits between you and the raw sources. When you add a new source, the LLM doesn't just index it for later retrieval. It reads it, extracts the key information, and integrates it into the existing wiki — updating entity pages, revising topic summaries, noting where new data contradicts old claims, strengthening or challenging the evolving synthesis. The knowledge is compiled once and then *kept current*, not re-derived on every query.\n13\t\n14\tThis is the key difference: **the wiki is a persistent, compounding artifact.** The cross-references are already there. The contradictions have already been flagged. The synthesis already reflects everything you've read. The wiki keeps getting richer with every source you add and every question you ask.\n15\t\n16\tYou never (or rarely) write the wiki yourself — the LLM writes and maintains all of it. You're in charge of sourcing, exploration, and asking the right questions. The LLM does all the grunt work — the summarizing, cross-referencing, filing, and bookkeeping that makes a knowledge base actually useful over time. In practice, I have the LLM agent open on one side and Obsidian open on the other. The LLM makes edits based on our conversation, and I browse the results in real time — following links, checking the graph view, reading the updated pages. Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase.\n17\t\n18\tThis can apply to a lot of different contexts. A few examples:\n19\t\n20\t- **Personal**: tracking your own goals, health, psychology, self-improvement — filing journal entries, articles, podcast notes, and building up a structured picture of yourself over time.\n21\t- **Research**: going deep on a topic over weeks or months — reading papers, articles, reports, and incrementally building a comprehensive wiki with an evolving thesis.\n22\t- **Reading a book**: filing each chapter as you go, building out pages for characters, themes, plot threads, and how they connect. By the end you have a rich companion wiki. Think of fan wikis like [Tolkien Gateway](https://tolkiengateway.net/wiki/Main_Page) — thousands of interlinked pages covering characters, places, events, languages, built by a community of volunteers over years. You could build something like that personally as you read, with the LLM doing all the cross-referencing and maintenance.\n23\t- **Business/team**: an internal wiki maintained by LLMs, fed by Slack threads, meeting transcripts, project documents, customer calls. Possibly with humans in the loop reviewing updates. The wiki stays current because the LLM does the maintenance that no one on the team wants to do.\n24\t- **Competitive analysis, due diligence, trip planning, course notes, hobby deep-dives** — anything where you're accumulating knowledge over time and want it organized rather than scattered.\n25\t\n26\t## Architecture\n27\t\n28\tThere are three layers:\n29\t\n30\t**Raw sources** — your curated collection of source documents. Articles, papers, images, data files. These are immutable — the LLM reads from them but never modifies them. This is your source of truth."
+          },
+          {
+            "id": "call_01_2NK7MpwcWcecikOs07oj8973",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/命名.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t\n2\t\n3\t## 智搭\n4\t\n5\t> **涵义**：\"智能搭子\"的缩写，\"智\"= 智能/智慧，\"搭\"= 搭子/搭档/搭把手\n6\t> **英文**：**ZhiDa** 或 **ZhiDa AI**\n7\t\n8\t**解读**：搭子是产品的核心用户形态，这个名字紧扣产品最独特的认知锚点。两个字简洁、有记忆点，中文语境下天然有亲和力。\n9\t\n10\t\n11\t> **推荐主域名：`zhida.ai`** — 短、准、有 AI 标签，且中英文用户都能理解\n12\t\n13\t---\n14\t\n15\t\n16\t## 搭域\n17\t\n18\t> **涵义**：\"搭\"= 搭子，\"域\"= 工作域/领域/业务域\n19\t> **英文**：**DaziSpace**\n20\t\n21\t**解读**：搭子 + 工作空间两个核心概念合体。搭子是你的工作伙伴，域是你的任务空间。\"搭域\"读起来也像\"达域\"（达成领域目标）。\n22\t\n23\t\n24\t>  **推荐主域名：`dazispace.com`** — .com 仍是最稳妥的企业选择，生造词大概率可注册\n25\t\n26\t---\n27\t## TaskWeaver · 织务\n28\t\n29\t> **涵义**：\"Weave\"（编织）+ \"Task\"（任务）= 把任务、知识、工具编织在一起\n30\t> **中文**：织务 — 谐音\"职务\"（双关企业办公），\"织\" = 编织整合"
+          },
+          {
+            "id": "call_02_nak7pRVBcROIMjwt18eY4418",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/system/CLAUDE.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# CLAUDE.md — LLM Wiki Schema\n2\t\n3\t## 三层架构\n4\t\n5\t```\n6\tvault/\n7\t├── raw/               # 原始资料（只读，LLM 永不修改）\n8\t│   ├── articles/      # 文章/网页剪藏\n9\t│   ├── books/         # 书籍章节\n10\t│   └── assets/        # 图片/附件\n11\t├── wiki/              # LLM 生成的 Wiki（LLM 读写）\n12\t│   ├── concepts/      # 概念页面\n13\t│   ├── entities/      # 实体页面（人物、组织、项目等）\n14\t│   ├── summaries/     # 单篇资料摘要\n15\t│   ├── synthesis/     # 综合对比/分析\n16\t│   ├── queries/       # 问答产出（可归档的优质答案）\n17\t│   ├── index.md       # 内容目录（每次摄入更新）\n18\t│   └── log.md         # 操作日志（追加写入）\n19\t└── system/            # 配置与模板（LLM 读写）\n20\t    ├── CLAUDE.md      # 本文件 — 工作流配置\n21\t    └── templates/     # 页面模板\n22\t```\n23\t\n24\t## 工作流\n25\t\n26\t### 1. 摄入（Ingest）\n27\t\n28\t当你将新资料放入 `raw/` 目录并告诉我处理后：\n29\t\n30\t1. 读取原始资料内容"
+          },
+          {
+            "id": "call_03_DZswN0CZJMHlQN1J49Or0219",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/system/templates/summary-template.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"\"\n3\tsource: \"\"\n4\tdate: {{date}}\n5\ttags: []\n6\tstatus: draft\n7\t---\n8\t\n9\t# {{title}}\n10\t\n11\t## 核心观点\n12\t\n13\t## 关键细节\n14\t\n15\t## 与现有知识的关系\n16\t\n17\t## 个人思考\n18\t"
+          },
+          {
+            "id": "call_04_blvUMdZtZtx8kr465y843492",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/system/templates/concept-template.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"\"\n3\taliases: []\n4\ttags: []\n5\trelated: []\n6\tcreated: {{date}}\n7\t---\n8\t\n9\t# {{title}}\n10\t\n11\t## 定义\n12\t\n13\t## 要点\n14\t\n15\t## 相关来源\n16\t\n17\t## 与其他概念的联系\n18\t"
+          },
+          {
+            "id": "call_05_DHmkqHOu0Aq1AzlOIdYg5356",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/system/templates/entity-template.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"\"\n3\ttype: \"\"\n4\ttags: []\n5\trelated: []\n6\tcreated: {{date}}\n7\t---\n8\t\n9\t# {{title}}\n10\t\n11\t## 概述\n12\t\n13\t## 相关来源\n14\t\n15\t## 关联\n16\t"
+          },
+          {
+            "id": "call_06_bt0oulJiA7euDjUwpZ0H8415",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/raw/articles/AI基本知识.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t\n2\t### 1. 大型语言模型（LLM）\n3\t\n4\t- **什么是LLM：**它是现代人工智能的“大脑”或基础。LLM是一个庞大的深度学习模型，它基于海量文本数据进行训练，用于预测序列中的下一个单词。\n5\t    \n6\t- **核心功能：**理解和生成自然语言，解决复杂的推理任务，编写代码，以及处理非结构化文本。\n7\t大语言模型（LLM）:\n8\t\n9\t### 2. Prompt 提示词\n10\t\n11\t- **它是什么：**您提供给 LLM 的输入文本、指令或查询，以指导其输出。\n12\t    \n13\t- **核心功能：**由于LLM是通用的，提示信息就像方向盘一样，它为模型设定了上下文、指令、输出格式、角色（例如， _“扮演高级软件工程师” ）和约束条件。_\n14\t    \n15\t- **提示工程：**构建提示（使用诸如少样本提示或思维链等技术）以可靠地获得高质量回复的学科。\n16\t    \n17\t\n18\t### 3. AI Agent（智能体）\n19\t\n20\t- **它是什么：**一个由 LLM 驱动的自主系统，可以**规划、使用工具并采取行动**来实现具体的、多步骤的目标，而不仅仅是回答单个文本提示。\n21\t    \n22\t- **核心功能：**标准的语言学习管理器 (LLM) 只是回复文本，而人工智能代理则以循环方式运行：\n23\t    \n24\t    1. **感知：**读取用户输入和当前状态。\n25\t        \n26\t    2. **计划：**将目标分解为可执行的步骤。\n27\t        \n28\t    3. **执行：**使用外部工具（浏览网页、运行代码、调用 API）。\n29\t        \n30\t    4. **反思：**评估结果，并在必要时调整策略。"
+          },
+          {
+            "id": "call_07_SIAZk8YqpfS5NkHxWALY5633",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/index.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\tupdated: 2026-07-28\n3\t---\n4\t\n5\t# Wiki Index\n6\t\n7\t> 这是 LLM Wiki 的知识库目录。每个页面列出链接、一句话摘要和元数据。\n8\t> 按类别组织。每次摄入新资料后由 LLM 自动更新。\n9\t\n10\t## Sources（原始资料）\n11\t\n12\t- [[raw/articles/AI基本知识.md]] — AI 大模型生态核心概念入门（LLM、Agent、RAG、MCP 等）\n13\t\n14\t## Concepts（概念）\n15\t\n16\t| 页面 | 一句话摘要 |\n17\t|------|-----------|\n18\t| [[wiki/concepts/llm\\|LLM]] | 大语言模型——基于海量文本训练的\"概率预测机\"，现代 AI 的引擎 |\n19\t| [[wiki/concepts/prompt-engineering\\|Prompt Engineering]] | 给大模型写指令的\"说话艺术\"，包括角色设定、Few-Shot、思维链等技巧 |\n20\t| [[wiki/concepts/ai-agent\\|AI Agent]] | 由 LLM 驱动的自主系统，能规划、用工具、多步骤执行任务 |\n21\t| [[wiki/concepts/rag\\|RAG]] | 检索增强生成——通过外部知识检索来增强 LLM 回答的准确性 |\n22\t| [[wiki/concepts/mcp\\|MCP 协议]] | \"AI 应用的 USB-C\"——标准化 AI 连接外部工具和数据的开放协议 |\n23\t| [[wiki/concepts/harness-engineering\\|Harness Engineering]] | AI 系统的安全保障框架，管理安全、状态和执行环境 |\n24\t| [[wiki/concepts/embedding\\|Embedding]] | 将文本转化为语义向量的技术，\"语义近则距离近\" |\n25\t| [[wiki/concepts/vector-database\\|向量数据库]] | 专门存储和检索向量的数据库，支撑大规模语义搜索 |\n26\t| [[wiki/concepts/fine-tuning\\|Fine-tuning]] | 在通用模型上二次训练以提升特定领域能力的\"二次进修\" |\n27\t| [[wiki/concepts/幻觉-hallucination\\|AI 幻觉]] | LLM 编造事实的固有特性——源于概率预测架构而非 Bug |\n28\t\n29\t## Entities（实体）\n30\t"
+          },
+          {
+            "id": "call_08_1McA7NznEb8ZIquqHI3S8165",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/log.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\tupdated: 2026-07-28\n3\t---\n4\t\n5\t# Wiki 操作日志\n6\t\n7\t> 按时间顺序记录所有操作：资料摄入、查询、整理。\n8\t> 每条记录以 `## [日期] 操作类型 | 标题` 格式开头。\n9\t\n10\t## [2026-07-27] init | 初始化 Wiki 结构\n11\t\n12\t- 创建三层架构：`raw/` → `wiki/` → `system/`\n13\t- 创建 `wiki/index.md` 和 `wiki/log.md`\n14\t- 创建 `system/CLAUDE.md` 工作流配置\n15\t\n16\t## [2026-07-27] cleanup | 删除已移除文章的相关条目\n17\t\n18\t- 原始文章 `Koszul Binomial Edge Ideals` 和 `企业AI工作空间与专业智能体平台产品规划书` 已被删除\n19\t- 移除所有相关的概念页、实体页、摘要页\n20\t- 更新 index 和 log 以反映当前状态\n21\t\n22\t## [2026-07-28] ingest | AI基本知识 —— 大规模摄入\n23\t\n24\t- 原始资料：`raw/articles/AI基本知识.md`（AI 大模型生态 10 大核心概念）\n25\t- 新建摘要：[[wiki/summaries/ai基本知识]]\n26\t- 新建概念页（10 个）：\n27\t  - [[wiki/concepts/llm]]\n28\t  - [[wiki/concepts/prompt-engineering]]\n29\t  - [[wiki/concepts/ai-agent]]\n30\t  - [[wiki/concepts/rag]]"
+          },
+          {
+            "id": "call_09_LYm7TObsaxxLlbeSAnee1999",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/concepts/llm.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"LLM（大语言模型）\"\n3\taliases: [大语言模型, Large Language Model]\n4\ttags: [AI, LLM, foundation]\n5\trelated: [prompt-engineering, ai-agent, rag, 幻觉-hallucination]\n6\t---\n7\t\n8\t# LLM（大语言模型）\n9\t\n10\t## 定义\n11\t\n12\t大型语言模型（Large Language Model）是一种基于海量文本数据训练的深度学习模型，核心能力是**预测序列中的下一个词**。它是现代 AI 的\"大脑\"或基础引擎。\n13\t\n14\t## 要点\n15\t\n16\t- **本质是概率预测机**，而非知识数据库——它计算\"在当前上下文后最可能出现哪个词\"\n17\t- **追求流畅度而非绝对真理**：训练目标是生成符合人类表达习惯的内容\n18\t- **有损压缩**：将数 TB 文本知识压缩进模型参数中，导致无法做到无损精确提取\n19\t- **核心能力**：自然语言理解与生成、复杂推理、代码编写、非结构化文本处理\n20\t\n21\t## 相关来源\n22\t\n23\t- [[raw/articles/AI基本知识.md]]\n24\t\n25\t## 与其他概念的联系\n26\t\n27\t- [[prompt-engineering]]：通过提示词引导 LLM 的输出\n28\t- [[ai-agent]]：LLM 是 Agent 的推理引擎，Agent = LLM + 规划 + 工具\n29\t- [[rag]]：RAG 为 LLM 提供外部知识，弥补其知识截止和幻觉问题\n30\t- [[幻觉-hallucination]]：LLM 的底层架构决定了幻觉是内在特性而非 Bug"
+          },
+          {
+            "id": "call_10_tzDZMFwphHKNglrdATZg5607",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/concepts/ai-agent.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"AI Agent（智能体）\"\n3\taliases: [智能体, AI Agent]\n4\ttags: [AI, agent, llm]\n5\trelated: [llm, prompt-engineering, rag, mcp, harness-engineering]\n6\t---\n7\t\n8\t# AI Agent（智能体）\n9\t\n10\t## 定义\n11\t\n12\tAI Agent 是一个由 LLM 驱动的**自主系统**，能够**规划、使用工具并采取行动**来实现具体的、多步骤的目标，而不仅仅是回答单个文本提示。\n13\t\n14\t## 要点\n15\t\n16\t- **Agent ≠ LLM**：LLM 只回复文本，Agent 以循环方式运作（感知 → 规划 → 执行 → 反思）\n17\t- **感知**：读取用户输入和当前状态\n18\t- **规划**：将目标分解为可执行的步骤\n19\t- **执行**：使用外部工具（浏览网页、运行代码、调用 API）\n20\t- **反思**：评估结果，必要时调整策略\n21\t- **典型场景**：自动预订行程、代码开发、数据分析等需要多步骤协作的任务\n22\t\n23\t## 相关来源\n24\t\n25\t- [[raw/articles/AI基本知识.md]]\n26\t\n27\t## 与其他概念的联系\n28\t\n29\t- [[llm]]：Agent 的核心推理引擎\n30\t- [[prompt-engineering]]：Agent 的指令由 prompt 驱动"
+          },
+          {
+            "id": "call_11_70nbXnZHRExzBuWH8t6g9402",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/concepts/rag.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"RAG（检索增强生成）\"\n3\taliases: [检索增强生成, Retrieval Augmented Generation]\n4\ttags: [AI, rag, retrieval]\n5\trelated: [llm, embedding, vector-database, ai-agent]\n6\t---\n7\t\n8\t# RAG（检索增强生成）\n9\t\n10\t## 定义\n11\t\n12\tRAG（Retrieval Augmented Generation）是一种将 LLM 的回答建立在**特定、外部或私有数据集**之上的技术范式，通过检索相关事实来增强生成内容的准确性和时效性。\n13\t\n14\t## 要点\n15\t\n16\t- **解决的问题**：LLM 的两个固有缺陷——幻觉（捏造事实）和知识过时\n17\t- **核心流程**：检索（Retrieve）→ 增强（Augment）→ 生成（Generate）\n18\t  - **检索**：在向量数据库中搜索与用户查询相关的事实\n19\t  - **增强**：将检索到的文档作为上下文附加到 LLM 的提示中\n20\t  - **生成**：指示 LLM 严格基于检索到的上下文编写响应\n21\t- **主要优势**：防止幻觉，可实时访问私有数据，无需重新训练模型\n22\t- **与 MCP 的分工**：RAG 解决\"知识从哪里来\"，MCP 解决\"动作往哪里去\"\n23\t\n24\t## 相关来源\n25\t\n26\t- [[raw/articles/AI基本知识.md]]\n27\t\n28\t## 与其他概念的联系\n29\t\n30\t- [[llm]]：RAG 为 LLM 提供外部知识支撑"
+          },
+          {
+            "id": "call_12_dlASuKvKehL2XijIjpkC0917",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/concepts/mcp.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"MCP 协议（模型上下文协议）\"\n3\taliases: [模型上下文协议, Model Context Protocol]\n4\ttags: [AI, mcp, protocol, tool-use]\n5\trelated: [ai-agent, llm, harness-engineering]\n6\t---\n7\t\n8\t# MCP 协议（模型上下文协议）\n9\t\n10\t## 定义\n11\t\n12\tMCP（Model Context Protocol）是一个**开放标准**，旨在统一 AI 应用程序如何连接到外部工具、数据库和本地文件系统。可理解为\"AI 应用的 USB-C\"。\n13\t\n14\t## 要点\n15\t\n16\t- **解决的问题**：在 MCP 出现前，每个 AI 工具或代理框架都需要为每项外部服务编写自定义集成代码\n17\t- **标准化为客户端-服务器模型**：\n18\t  - **MCP 客户端**：AI 应用程序（如 Claude Desktop、IDE 扩展）\n19\t  - **MCP 服务器**：轻量级插件，用于暴露工具和数据（如本地 SQLite 数据库、Slack 集成、文件系统）\n20\t- **主要优势**：允许任何 AI Agent 立即连接到任何 MCP 支持的数据源或工具，无需逐一定制集成\n21\t- **与 RAG 的分工**：RAG 获取\"知识\"，MCP 执行\"动作\"\n22\t\n23\t## 相关来源\n24\t\n25\t- [[raw/articles/AI基本知识.md]]\n26\t\n27\t## 与其他概念的联系\n28\t\n29\t- [[ai-agent]]：Agent 通过 MCP 协议执行实际操作\n30\t- [[llm]]：LLM 通过 MCP 扩展能力边界"
+          },
+          {
+            "id": "call_13_OMzRLYGrSyfO6SmmrNK70950",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/concepts/prompt-engineering.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"Prompt Engineering（提示词工程）\"\n3\taliases: [提示词工程, 提示工程]\n4\ttags: [AI, prompt, llm]\n5\trelated: [llm, ai-agent]\n6\t---\n7\t\n8\t# Prompt Engineering（提示词工程）\n9\t\n10\t## 定义\n11\t\n12\tPrompt Engineering 是一门给大模型写指令的\"说话艺术\"与\"技术规范\"——通过精心设计的输入文本来精确引导 LLM 的输出质量和格式。\n13\t\n14\t## 要点\n15\t\n16\t- **本质**：大模型是通晓万物的专家，但需要用准确的语言引导它\n17\t- **关键技术技巧**：\n18\t  - **角色设定**（Role Prompting）：如\"你是一名资深架构师\"\n19\t  - **少样本提示**（Few-Shot）：提供几个示例来指导输出模式\n20\t  - **思维链**（Chain-of-Thought）：引导模型逐步推理\n21\t- **为什么重要**：同样的 LLM，不同的提示词可以产生天壤之别的结果\n22\t\n23\t## 相关来源\n24\t\n25\t- [[raw/articles/AI基本知识.md]]\n26\t\n27\t## 与其他概念的联系\n28\t\n29\t- [[llm]]：Prompt 是驾驭 LLM 的核心手段\n30\t- [[ai-agent]]：Agent 的系统提示词决定了其行为模式和能力边界"
+          },
+          {
+            "id": "call_14_RuGVFhBIYzp5yMzB0ndO6954",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/concepts/harness-engineering.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"Harness Engineering（线束工程）\"\n3\taliases: [线束工程, AI安全框架, 代理线束]\n4\ttags: [AI, harness, safety, engineering]\n5\trelated: [ai-agent, llm, mcp]\n6\t---\n7\t\n8\t# Harness Engineering（线束工程）\n9\t\n10\t## 定义\n11\t\n12\tHarness Engineering 是围绕 LLM 或 AI Agent 构建的**周边基础设施、控制框架和执行环境**，用于保持其可靠性、安全性和高效性。可理解为\"安全笼和转向装置\"。\n13\t\n14\t## 要点\n15\t\n16\t- **解决的问题**：生产环境中的原始 LLM 可能难以预测，需要外围系统来管控\n17\t- **核心组件**：\n18\t  - **内存管理**：存储短期和长期对话历史\n19\t  - **防护措施与过滤**：检查输入和输出是否存在安全风险\n20\t  - **执行沙箱**：在隔离的安全环境中运行 Agent 生成的代码\n21\t  - **评估与回退**：检测 Agent 死循环或步骤失败，重新路由或通知人工\n22\t- **定位**：AI 系统的\"操作系统层\"——让 Agent 可靠运行的保障\n23\t\n24\t## 相关来源\n25\t\n26\t- [[raw/articles/AI基本知识.md]]\n27\t\n28\t## 与其他概念的联系\n29\t\n30\t- [[ai-agent]]：Harness 是 Agent 生产化部署的必备基础设施"
+          },
+          {
+            "id": "call_15_KUTXjt54HKacY3VkuHG37333",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/concepts/embedding.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"Embedding（向量嵌入）\"\n3\taliases: [向量嵌入, 嵌入]\n4\ttags: [AI, embedding, vector]\n5\trelated: [rag, vector-database, llm]\n6\t---\n7\t\n8\t# Embedding（向量嵌入）\n9\t\n10\t## 定义\n11\t\n12\tEmbedding 是将人类的文本、图片、音频等高维数据，转换成一串计算机能理解的**高维数字数组（向量）**的技术。核心 magic 在于\"语义相近的，向量距离也近\"。\n13\t\n14\t## 要点\n15\t\n16\t- 将文字含义转化为空间位置——\"猫\"和\"狗\"的向量距离远小于\"猫\"和\"微波炉\"\n17\t- Embedding 是 RAG 和语义搜索的技术基础\n18\t- 质量好的 Embedding 模型能捕捉语义、句法甚至隐含情感\n19\t- 不同模态的数据（文本、图片、音频）可以映射到同一向量空间\n20\t\n21\t## 相关来源\n22\t\n23\t- [[raw/articles/AI基本知识.md]]\n24\t\n25\t## 与其他概念的联系\n26\t\n27\t- [[rag]]：Embedding 是 RAG 管线的第一步——将文档转化为可检索的向量\n28\t- [[vector-database]]：向量数据库专门用于存储和检索 Embedding\n29\t- [[llm]]：LLM 内部也使用 Embedding 层来处理输入文本\n30\t"
+          },
+          {
+            "id": "call_16_vMC8xD2UnvN9B1JDrCYR4810",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/concepts/vector-database.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"向量数据库（Vector Database）\"\n3\taliases: [向量数据库, Vector DB, 矢量数据库]\n4\ttags: [AI, database, vector, retrieval]\n5\trelated: [embedding, rag]\n6\t---\n7\t\n8\t# 向量数据库（Vector Database）\n9\t\n10\t## 定义\n11\t\n12\t向量数据库是专门用来**存储和高效检索 Embedding（向量）数据**的特殊数据库（如 Milvus, Pinecone, Chroma 等），擅长做**语义相似度搜索**（KNN/ANN 检索）。\n13\t\n14\t## 要点\n15\t\n16\t- **与关系型数据库的区别**：MySQL 擅长\"完全匹配\"，向量数据库擅长\"语义近似匹配\"\n17\t- **核心能力**：当你拥有数百万份文档时，向量数据库能让 AI 快速找到最相关的内容\n18\t- **典型产品**：Milvus（开源）、Pinecone（云服务）、Chroma（轻量嵌入式）、Weaviate、Qdrant\n19\t- **工作原理**：使用近似最近邻（ANN）算法在大规模向量空间中高效搜索\n20\t\n21\t## 相关来源\n22\t\n23\t- [[raw/articles/AI基本知识.md]]\n24\t\n25\t## 与其他概念的联系\n26\t\n27\t- [[embedding]]：向量数据库存储的内容就是 Embedding 生成的向量\n28\t- [[rag]]：向量数据库是 RAG 架构中\"检索\"步骤的核心基础设施\n29\t"
+          },
+          {
+            "id": "call_17_ZSm0z0qvM63RpFhTtrcP7478",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/concepts/fine-tuning.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"Fine-tuning（微调）\"\n3\taliases: [微调, 模型微调]\n4\ttags: [AI, fine-tuning, training, llm]\n5\trelated: [llm, prompt-engineering]\n6\t---\n7\t\n8\t# Fine-tuning（微调）\n9\t\n10\t## 定义\n11\t\n12\tFine-tuning（微调）是在已有的通用大模型（如 Llama 3、GPT-4）基础上，使用特定的业务数据集**再次进行训练**，改变模型内部权重的过程。可理解为模型的\"二次进修\"。\n13\t\n14\t## 要点\n15\t\n16\t- **与 RAG 的区别**：RAG 不改变模型本身，微调改变模型的内部知识\n17\t- **适用场景**：\n18\t  - 掌握特定的专业领域知识（医学、法律、金融）\n19\t  - 固定独特的输出风格或格式\n20\t  - 提升在特定任务上的执行表现\n21\t- **成本**：需要标注数据、计算资源和 ML 工程经验\n22\t- **选择路径**：能用 prompt 解决的用 prompt，能用 RAG 的用 RAG，最后才考虑微调\n23\t\n24\t## 相关来源\n25\t\n26\t- [[raw/articles/AI基本知识.md]]\n27\t\n28\t## 与其他概念的联系\n29\t\n30\t- [[llm]]：微调是修改 LLM 权重的方法"
+          },
+          {
+            "id": "call_18_QvCssZx75UOBT5gfHctv3098",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/concepts/幻觉-hallucination.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"AI 幻觉（Hallucination）\"\n3\taliases: [幻觉, Hallucination, 模型幻觉]\n4\ttags: [AI, llm, hallucination, limitation]\n5\trelated: [llm, rag]\n6\t---\n7\t\n8\t# AI 幻觉（Hallucination）\n9\t\n10\t## 定义\n11\t\n12\tAI 幻觉是指大语言模型煞有介事地**编造错误事实或虚构信息**的现象。它不是偶然的 Bug，而是由 LLM 的**底层技术架构和训练方式**决定的固有特性。\n13\t\n14\t## 要点\n15\t\n16\t- **根本原因不是 Bug，而是架构使然**：\n17\t  1. **概率预测机制**：LLM 是\"预测下一个词\"的统计模型，追求流畅度而非绝对真理\n18\t  2. **训练数据噪音**：互联网数据本身包含错误、偏见和矛盾信息\n19\t  3. **RLHF 副作用**：人类偏好训练导致模型过度讨好（Sycophancy）和盲目自信\n20\t  4. **压缩损失**：数 TB 知识有损压缩进模型参数，无法精确提取具体数据\n21\t  \n22\t- **缓解手段**：RAG 是最主流的方法——让模型基于检索到的事实回答而非依赖内部参数\n23\t- **不需要完全消除**：在某些创意场景（头脑风暴、写作灵感）中，\"幻觉\"反而是优势\n24\t\n25\t## 相关来源\n26\t\n27\t- [[raw/articles/AI基本知识.md]]\n28\t\n29\t## 与其他概念的联系\n30\t"
+          },
+          {
+            "id": "call_19_gJ6ugxc0jIRKNwl77yj52630",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/synthesis/ai-ecology.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# AI 生态技术栈全景——从 LLM 到应用的完整链路\n2\t\n3\t> 综合 `AI基本知识.md` 的内容，梳理大模型生态中核心概念的分层关系与协同逻辑。\n4\t\n5\t## 一句话全景\n6\t\n7\t> 开发者通过 **Prompt Engineering** 指导 **Agent（智能体）** 运作；Agent 遇到专业知识时，利用 **Embedding** 技术去 **向量数据库** 中通过 **RAG** 检索资料；遇到需要执行的操作，通过 **MCP 协议** 调用外部工具；而如果基础模型在特定领域表现不够专业，还可以通过 **Fine-tuning** 对其进行深度改造。**整个工作流程由 Harness Engineering 管理、测试和保障。**\n8\t\n9\t## 四层架构\n10\t\n11\t```\n12\t┌─────────────────────────────────────────────────┐\n13\t│            Harness Engineering                   │\n14\t│    （安全管控 · 状态管理 · 执行沙箱 · 回退）       │\n15\t├─────────────────────────────────────────────────┤\n16\t│                   AI Agent                       │\n17\t│    （感知 → 规划 → 执行 → 反思）                  │\n18\t├──────────────┬──────────────────┬───────────────┤\n19\t│     RAG      │       MCP       │   Prompt       │\n20\t│  (知识检索)   │    (工具调用)    │  (指令控制)    │\n21\t├───────┬──────┴──────┬───────────┴───────┬───────┤\n22\t│Embed  │  Vector DB  │  Fine-tuning      │  LLM  │\n23\t│(向量化)│  (向量存储)  │  (模型定制)       │ (引擎)│\n24\t└───────┴─────────────┴───────────────────┴───────┘\n25\t```\n26\t\n27\t## 概念关系图谱\n28\t\n29\t| 层级 | 概念 | 核心问题 | 类比 |\n30\t|------|------|---------|------|"
+          },
+          {
+            "id": "call_00_xbTJiWDfutBohG2IPyQ38044",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/01-AI概念/LLM⼤语⾔模型.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t- **什么是LLM：**它是现代人工智能的“大脑”或基础。LLM是一个庞大的深度学习模型，它基于海量文本数据进行训练，用于预测序列中的下一个单词。\n2\t    \n3\t- **核心功能：**理解和生成自然语言，解决复杂的推理任务，编写代码，以及处理非结构化文本。\n4\t大语言模型（LLM）:是基于海量文本数据和深度学习架构（如 Transformer）训练的人工智能系统，其核心原理是通过捕捉上下文的统计规律来理解并生成自然语言；它不仅能胜任问答、写作、翻译和代码编写等复杂任务，还具备跨领域的泛化与逻辑推理能力。"
+          },
+          {
+            "id": "call_01_8TyB3QxapTqa0eAY7EsZ0575",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/01-AI概念/Prompt Engineering.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t- **是什么**：给大模型写指令的“说话艺术”与“技术规范”。\n2\t    \n3\t- **做什么**：大模型就像一个通晓万物的专家，但你需要用准确的语言引导它。提示词工程包含角色设定（如“你是一名资深架构师”）、少样本提示（Few-Shot）、思维链（Chain-of-Thought）等技巧，用来精确控制模型的输出质量和格式。\n4\t    \n5\tPrompt Engineering：是**设计、优化promote的系统性工程**。通过对语言结构、逻辑顺序和上下文控制的精准把控，最大程度地激发大模型的推理与表达能力。"
+          },
+          {
+            "id": "call_02_e7Wh1ZzQFTtEl0CBmaKl1371",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/01-AI概念/Agent智能体.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t- **它是什么：**一个由 LLM 驱动的自主系统，可以**规划、使用工具并采取行动**来实现具体的、多步骤的目标，而不仅仅是回答单个文本提示。\n2\t    \n3\t- **核心功能：**标准的语言学习管理器 (LLM) 只是回复文本，而人工智能代理则以循环方式运行：\n4\t    \n5\t    1. **感知：**读取用户输入和当前状态。\n6\t        \n7\t    2. **计划：**将目标分解为可执行的步骤。\n8\t        \n9\t    3. **执行：**使用外部工具（浏览网页、运行代码、调用 API）。\n10\t        \n11\t    4. **反思：**评估结果，并在必要时调整策略。\n12\t        \n13\t- **例如：**一名代理的任务是_“为我的商务旅行预订机票和酒店，预算不超过 1000 美元”，_他将搜索航班 API，验证酒店价格，比较行程，并汇总或完成预订。\n14\t    \n15\t    Agent智能体：是一种以大语言模型（LLM）为“大脑”的自主人工智能系统，它打破了传统模型只能“被动问答”的局限，具备**感知环境**、**自主规划**、**记忆积累**以及**调用外部工具**（如 API、计算器或数据库）的能力，能够像人类助手一样独立拆解并执行复杂的多步骤任务。"
+          },
+          {
+            "id": "call_03_qPtDsc7GODutDPoV0xMH4693",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/01-AI概念/RAG检索增强⽣成.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t **它是什么：**一种将LLM的响应建立在特定、外部或私有数据集（如公司文件、代码库或个人文件）之上的技术。\n2\t    \n3\t- **核心功能：** LLM（法学硕士）可能面临两大问题：虚构（捏造事实）和知识过时。RAG（红绿灯）通过以下方式解决这些问题：\n4\t    \n5\t    1. **检索：**在数据库（通常是 Vector DB）中搜索与用户查询相关的事实。\n6\t        \n7\t    2. **增强功能：**将检索到的文档作为上下文附加到 LLM 的提示中。\n8\t        \n9\t    3. **生成：指示 LLM**_严格_根据检索到的上下文编写响应。\n10\t        \n11\t- **主要优势：**防止出现幻觉，并可在不重新训练基础模型的情况下实时访问专有企业数据。\n12\t\n13\t\n14\t**RAG（检索增强生成）** 是一种将外部知识库与大语言模型结合的技术，它在模型回答问题前，先从指定的数据库或文档中**精准检索**相关最新信息，再将这些事实作为“参考资料”提供给模型进行**辅助生成**，从而大幅减少模型“幻觉”（瞎编），并让 AI 无需重新训练即可掌握私有数据与实时知识。"
+          },
+          {
+            "id": "call_04_CGajIXZmqcKVvMQcRHZi3691",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/01-AI概念/MCP协议.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t**它是什么：**一个开放标准，旨在统一人工智能应用程序如何连接到外部工具、数据库和本地文件系统。\n2\t    \n3\t- **核心功能：**在 MCP 出现之前，每个 AI 工具或代理框架都必须为每个外部服务编写自定义集成代码（例如，GitHub 的自定义插件、Google Drive 的自定义插件、Postgres 的自定义插件）。MCP 将此标准化为客户端-服务器模型：\n4\t    \n5\t    - **MCP 客户端：** AI 应用程序（如 Claude Desktop 或 IDE 扩展）。\n6\t        \n7\t    - **MCP 服务器：**轻量级插件，用于公开工具/数据（例如本地 SQLite 数据库、Slack 集成或系统终端）。\n8\t        \n9\t- **主要优势：**可以将 MCP 理解为“人工智能应用的 USB-C”。它允许任何人工智能代理立即连接到任何 MCP 支持的数据源或工具，而无需为每个提供商进行自定义集成。\n10\t**MCP（模型上下文协议，Model Context Protocol）** 是一种将 AI 大模型与外部工具和数据源进行连接的**开放标准协议**，形象地说就像 AI 界的“USB-C 接口”；它通过统一通信规范，让大语言模型（LLM）和 Agent 无需重复开发复杂的特定接口，就能安全、即插即用地调用本地文件、数据库或第三方 API，实现知识检索与工具调用的标准化与通用化。"
+          },
+          {
+            "id": "call_05_AcZI3VVh3mI3lUhY2ufb8663",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/01-AI概念/向量数据库与Embedding.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t## 向量数据库\n2\t**是什么**：专门用来存储和高效检索 Embedding（向量）数据的特殊数据库（如 Milvus, Pinecone, Chroma 等）。\n3\t    \n4\t- **做什么**：传统数据库（如 MySQL）擅长查“完全匹配的字符串”，而向量数据库擅长做“语义相似度搜索”（KNN/ANN 检索）。当你有数百万份文档需要让 AI 快速查找最相关的内容时，必须依赖向量数据库。\n5\t**向量数据库** 是一种专门用来存储、索引和快速检索高维向量数据（即由 AI 模型将文本、图片或音频转化为数值数组）的数据库；与传统数据库依赖精准关键字匹配不同，它通过计算向量间的空间距离实现**语义相似度搜索**，是为大语言模型（LLM）和 RAG（检索增强生成）系统提供长期记忆与海量知识检索的核心基础设施。\n6\t\n7\t\n8\t## Embedding\n9\t**是什么**：将人类的文本、图片、音频等高维数据，转换成计算机能理解的一串高维高精度的**数字数组（向量）**。\n10\t    \n11\t- **做什么**：人类看文字看含义，计算机看文字只看代码。Embedding 的核心 magic 在于“语义近的，向量距离也近”。例如，“猫”和“狗”转换成向量后在多维空间里的距离，远比“猫”和“微波炉”近得多。\n12\t- \n13\t**Embedding（嵌入）** 是将文本、图像等复杂数据转化为高维数值向量的 AI 技术，它的神奇之处在于能够捕捉数据背后的**真实语义与关联**——让计算机不仅能看懂文字，还能理解“苹果”和“水果”在含义上是亲近的，是连接现实数据与大模型、向量数据库以及 RAG 系统的核心桥梁。"
+          },
+          {
+            "id": "call_06_UMB2QOEmZxm6S0XNHPNr3934",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/01-AI概念/Fine-tuning微调.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t **是什么**：**“二次进修”**。在已有的通用大模型（如 Llama 3、GPT-4）基础上，使用特定的业务数据集再次进行训练，改变模型的内部权重。\n2\t    \n3\t- **做什么**：让模型掌握特定的专业领域知识、固定独特的输出风格/格式，或者大幅提升在特定任务（如医学诊断、法律文书生成）上的执行表现。\n4\tFine-tuning:在已有模型基础上通过微调使得模型在可以改变表达风格、遵循复杂输出格式、提升专业领域行为表现。"
+          },
+          {
+            "id": "call_07_ZE9iGPFNDLeveB8Cr2y51470",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/工具对比/AI助手横向对比.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "<system-reminder>Warning: the file exists but the contents are empty.</system-reminder>"
+          },
+          {
+            "id": "call_08_RSfCX57rpdIC7EguBUzV6544",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude使用指南.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "<system-reminder>Warning: the file exists but the contents are empty.</system-reminder>"
+          },
+          {
+            "id": "call_09_pnUfZMdKyRG0qsysEbUZ0887",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude体验.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\tClaude使用比较方便，这次尝试中有一些小问题需要调试，经过多轮对话和调试可以很好地完成任务。\n2\tClaudian在obsidian中可以比较好地将文档分析归类。"
+          },
+          {
+            "id": "call_10_PprYBDbCqalMDLkVoOay2793",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Codex/Codex使用指南.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t通过第三方中转api登录\n2\thttps://www.bilibili.com/video/BV1EJMg6UELQ/?spm_id_from=333.1387.homepage.video_card.click&vd_source=3675f44547a7c234e6647639efab3747 \n3\t[悟空 API 使用教程](https://wkapi.vip/wkapi-docs.html)\n4\t\n5\t"
+          },
+          {
+            "id": "call_11_RPZw0XAiO7CwyiQ28xwr6069",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Codex/Codex体验.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\tCodex编程能力强，比较少提示词情况下轻松完成一个小游戏。\n2\t插件使用体验简单易上手：聚焦ppt skill，下载了guizang-ppt skill,frontend-slides skill,ppt-master skill。\n3\t使用下来很便捷审美比较高级好用"
+          },
+          {
+            "id": "call_12_41aBO8xexUgpcbVPvkNG9460",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Codex/obsidian配置与插件.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\tObsidian 是一款基于**本地纯文本（Markdown）**的卡片盒与知识管理软件。它的核心价值在于**数据自主**（所有笔记都是普通的 `.md` 文件）和以**双向链接**构建网状知识库。\n2\t\n3\t这篇上手指南将带你高效完成从安装到建立完整工作流的全过程。\n4\t\n5\t## 1. 安装与基础配置\n6\t\n7\t### 步骤一：创建你的第一个仓库 (Vault)\n8\t\n9\t1. 前往官网 `obsidian.md` 下载对应系统（Windows / macOS / iOS / Android）的客户端。\n10\t    \n11\t2. 打开软件，点击 **\"Create new vault\"（创建新仓库）**。\n12\t    \n13\t3. 选择一个本地文件夹作为仓库路径。\n14\t    \n15\t\n16\t> **建议**：建议将仓库保存在固定的本地路径（如 `D:\\ObsidianVault` 或 macOS 的 `Documents` 目录下）。\n17\t\n18\t### 步骤二：新手必备的关键设置\n19\t\n20\t点击左下角齿轮 **设置 (Settings)**，调整以下选项以获得最佳体验：\n21\t\n22\t- **语言切换**：`About` -> `Language` -> 选择 **简体中文**。\n23\t    \n24\t- **内部链接格式**：`编辑器 (Editor)` -> 打开 **自动补全 `[[双链]]`**；`文件与链接 (Files and links)` -> **将“内部链接形式”设置为“相对路径”**（这样即使移动文件夹，笔记里的图片和链接也不会失效）。\n25\t    \n26\t- **关闭严格换行**：`编辑器 (Editor)` -> 关闭 `Strict line breaks`（这样在输入换行时不需要每次敲两个空格）。\n27\t    \n28\t\n29\t## 2. 核心概念：双向链接 (Backlinks)\n30\t"
+          },
+          {
+            "id": "call_13_Nju23Gorr7ti2pFVj5wj7669",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Codex/Codex项目/类马里奥小游戏.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t\n2\t类似于超级玛丽奥类型的闯关游戏\n3\t![[skybound_sprout.exe]]![[ai小游戏.png]]"
+          },
+          {
+            "id": "call_14_1pnvgOXLJK7Qh72vcx1x8500",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Codex/Codex项目/介绍ppt.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t![[index 2.html]]"
+          },
+          {
+            "id": "call_15_d2W0UpijhRr3GPcPvqlJ7255",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/workbuddy/obsidian的配置和插件.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "<system-reminder>Warning: the file exists but the contents are empty.</system-reminder>"
+          },
+          {
+            "id": "call_16_gY1c99TFbVQ7FVMk7YwI0347",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/workbuddy/workbuddy使用.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t## 自动化：\n2\t足球转会期每日资讯。\n3\t## 搭建agent\n4\t在 WorkBuddy 中搭建一个专门针对 **“C++ 算法竞赛（如 ACM/ICPC、CCPC、NOI/CSP、LeetCode/Codeforces）”** 的 Agent，能够显著提升你的刷题、调试、找 Bug 以及写题解的效率。\n5\t\n6\t## ⽤⼯作流⾃动化错题整理\n7\t通过搭建的agent，完成题解，将题解自动化转化为md文档收入到obsidian库中，方便总结成知识库。![[Pasted image 20260730163133.png]]"
+          },
+          {
+            "id": "call_17_qQKNkDUQPYLHuOrimpS10549",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/workbuddy/workbuddy学习.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t要系统且高效地掌握 **WorkBuddy**（腾讯 CodeBuddy 团队推出的 AI Agent 办公协同空间）的核心模块，建议采用“架构解构 ➔ 模块拆解 ➔ 实操路线”的三步法来学习。\n2\t\n3\tWorkBuddy 的核心逻辑不是“你问我答”的普通 Chatbot，而是一个**多 Agent 协同的工作台**。以下是各核心模块的系统拆解与学习路径：\n4\t\n5\t## 一、 核心功能模块拆解\n6\t\n7\tWorkBuddy 的底层设计围绕着 **上下文（Context）+ 工具（Tools）+ 执行体（Agents）** 展开。\n8\t\n9\t```\n10\t                       ┌─────────────────────────┐\n11\t                       │    对话交互 (Chat Hub)   │\n12\t                       └────────────┬────────────┘\n13\t                                    │ 调度与分发\n14\t             ┌──────────────────────┼──────────────────────┐\n15\t             ▼                      ▼                      ▼\n16\t    ┌─────────────────┐   ┌───────────────────┐   ┌───────────────────┐\n17\t    │ Agent 市场      │   │ 知识库            │   │ 工作流 (Workflow) │\n18\t    │ (专用角色与技能) │   │ (私有与团队上下文)│   │ (多任务自动化编排)│\n19\t    └────────┬────────┘   └─────────┬─────────┘   └─────────┬─────────┘\n20\t             └──────────────────────┼──────────────────────┘\n21\t                                    │ 底层管道\n22\t                                    ▼\n23\t                          ┌───────────────────┐\n24\t                          │ MCP 连接器        │\n25\t                          │ (腾讯生态/第三方API)│\n26\t                          └───────────────────┘\n27\t```\n28\t\n29\t### 1. 对话 (Chat Hub)\n30\t"
+          },
+          {
+            "id": "call_18_UJRY29K40OlhxP2vkcYK6369",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/workbuddy/workbuddy功能脑图.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t![[workbuddy功能脑图.png|697]]"
+          },
+          {
+            "id": "call_19_zztnakw4teV0WHVm5m6H8387",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/git初步使用/git初步使用.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t最开始用git提交是看这个文档：https://jasonai.me/blog/obsidian-git-sync/\n2\t能进行提交和同步上传。\n3\t\n4\t下面具体了解每一步是干嘛的：\n5\tGit 的核心思想是**分布式版本控制**：你的本地项目本身就是一个完整的数据库，而远端（如 GitHub/GitLab）则是全员同步的主服务器。\n6\t\n7\t这里用最直接的方式，逐一拆解这 6 个核心命令的使用场景与背后逻辑：\n8\t\n9\t## 1. 克隆代码库：`git clone`\n10\t\n11\t将远程仓库完整地下载（复制）到本地，包括代码文件、分支以及所有的历史提交记录。\n12\t\n13\t- **典型使用场景**：加入新项目、或者把别人的开源项目下载到自己电脑上。\n14\t    \n15\t- **常用命令**：\n16\t    \n17\t    Bash\n18\t    \n19\t    ```\n20\t    # 克隆指定仓库（默认在当前目录下生成一个项目同名文件夹）\n21\t    git clone https://github.com/username/repository.git\n22\t    \n23\t    # 克隆并自定义本地文件夹名称\n24\t    git clone https://github.com/username/repository.git my-project\n25\t    ```\n26\t    \n27\t\n28\t## 2. 保存本地快照：`git commit`\n29\t\n30\t将你放在“暂存区”（Staging Area，即通过 `git add` 收集的修改）的代码变动，打包生成一个永久的历史版本（提交记录）。"
+          },
+          {
+            "id": "call_00_EBkGJ2mnECBVH0y6eKUa0393",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/PROJECT_SUMMARY.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# 测风激光雷达控制系统 - 项目总结\n2\t\n3\t## ✅ 已完成任务\n4\t\n5\t### 1. 完整的 Qt UI 文件系统\n6\t- ✅ **MainWindow.ui** (20KB) - Qt Designer 设计的完整UI界面\n7\t- ✅ **MainWindow_ui.h/cpp** - 自动生成的UI类\n8\t- ✅ **StyleSheet 系统** - 深色科技风格主题\n9\t\n10\t### 2. 核心组件\n11\t- ✅ **StatusIndicator** - 带闪烁效果的状态指示器\n12\t- ✅ **WindChartWidget** - 三合一风矢量图表\n13\t- ✅ **主窗口框架** - 完整的菜单+导航+内容布局\n14\t\n15\t### 3. 完整的文档\n16\t- ✅ **QUICKSTART.md** - 快速开始指南（3步启动）\n17\t- ✅ **UI_GUIDE.md** - 详细UI编辑指南\n18\t- ✅ **README.md** - 项目完整文档\n19\t\n20\t## 📁 文件清单（14个文件）\n21\t\n22\t```\n23\tD:/Claude/fengchang/\n24\t├── 核心UI文件\n25\t│   ├── MainWindow.ui           ✅ Qt Designer UI设计（20KB）\n26\t│   ├── MainWindow_ui.h         ✅ 自动生成的UI头文件\n27\t│   ├── MainWindow_ui.cpp       ✅ UI实现与业务逻辑\n28\t│   └── MainWindow.h            ✅ 主窗口类\n29\t├── 头文件（Headers）\n30\t│   ├── StatusIndicator.h       ✅ 状态指示器"
+          },
+          {
+            "id": "call_01_R55fIA9Yygy6bcWKQ7I72408",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/README.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# 测风激光雷达控制系统 - Qt 主界面实现\n2\t\n3\t## 📋 项目说明\n4\t\n5\t本项目是基于 Qt5.14 实现的测风激光雷达控制系统主界面，包含以下功能：\n6\t\n7\t### 核心功能\n8\t- ✅ **三维风场可视化** - 粒子云实时显示，10Hz 刷新率\n9\t- ✅ **风矢量图表** - 顺/逆风、测风、垂直风三合一展示\n10\t- ✅ **水平/垂直切片** - 俯视和剖面实时显示\n11\t- ✅ **系统状态指示** - 绿/黄/红三态状态灯\n12\t- ✅ **菜单栏** - 系统、设备、测量、视图、数据、帮助六大菜单\n13\t- ✅ **左侧导航树** - 8个功能页面快速切换\n14\t- ✅ **状态栏** - 实时显示系统运行状态\n15\t\n16\t### 美化特性\n17\t- 深色科技感UI设计\n18\t- 蓝色主题配色 (#0078d4)\n19\t- 高对比度文字 (#e0e0e0)\n20\t- 圆角边框和渐变效果\n21\t- 鼠标悬停和点击交互反馈\n22\t\n23\t## 📁 项目文件结构\n24\t\n25\t```\n26\tD:/Claude/fengchang/\n27\t├── MainWindow.h              # 主窗口头文件\n28\t├── MainWindow.cpp            # 主窗口实现\n29\t├── StatusIndicator.h         # 状态指示器头文件\n30\t├── StatusIndicator.cpp       # 状态指示器实现"
+          },
+          {
+            "id": "call_02_KM8hiv1fmK3HavOUW06z8981",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/QUICKSTART.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# 快速开始指南\n2\t\n3\t## 📂 项目文件位置\n4\t\n5\t所有文件位于：**D:/Claude/fengchang/**\n6\t\n7\t## ⚡ 快速编译和运行（3步）\n8\t\n9\t### 步骤 1：打开项目\n10\t```\n11\t1. 打开 Qt Creator\n12\t2. 点击 \"文件\" → \"打开文件或工程\"\n13\t3. 选择 D:/Claude/fengchang/WindFieldRadar.pro\n14\t4. 选择 \"Desktop Qt 5.14.2 MinGW 32-bit\" → 点击 \"完成\"\n15\t```\n16\t\n17\t### 步骤 2：编译\n18\t```\n19\t按 Ctrl+B 或点击 \"构建\" → \"构建全部\"\n20\t```\n21\t\n22\t### 步骤 3：运行\n23\t```\n24\t按 Ctrl+R 或点击 \"构建\" → \"运行\"\n25\t```\n26\t\n27\t## 📁 主要文件清单\n28\t\n29\t| 文件 | 说明 |\n30\t|------|------|"
+          },
+          {
+            "id": "call_03_psmM4xSpiNcLSNYglTZJ9407",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/UI_GUIDE.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# Qt UI 文件使用指南\n2\t\n3\t## 📋 文件说明\n4\t\n5\t本项目现已支持 Qt Designer 生成的 UI 文件，文件结构如下：\n6\t\n7\t### 核心文件\n8\t- **MainWindow.ui** - Qt Designer 界面设计文件（可用 Qt Designer 编辑）\n9\t- **MainWindow_ui.h** - UI 文件定义头\n10\t- **MainWindow_ui.cpp** - UI 文件实现\n11\t- **MainWindow.h** - 主窗口类头文件\n12\t- **StatusIndicator.h/cpp** - 状态指示器组件\n13\t- **WindChartWidget.h/cpp** - 风矢量图表组件\n14\t- **main.cpp** - 程序入口\n15\t\n16\t## 🔧 在 Qt Creator 中编译和运行\n17\t\n18\t### 方法一：打开 .pro 项目文件（推荐）\n19\t\n20\t1. **打开 Qt Creator**\n21\t2. **点击菜单** → `文件` → `打开文件或工程`\n22\t3. **选择** `D:/Claude/fengchang/WindFieldRadar.pro`\n23\t4. **选择编译工具链**\n24\t   - 如果弹出配置对话框，选择 `Desktop Qt 5.14.2 MinGW 32-bit`\n25\t   - 点击 `下一步` → `完成`\n26\t5. **编译项目**\n27\t   - 按 `Ctrl+B` 或点击 `构建` → `构建全部`\n28\t   - 等待编译完成（首次编译可能较慢）\n29\t6. **运行程序**\n30\t   - 按 `Ctrl+R` 或点击 `构建` → `运行`"
+          },
+          {
+            "id": "call_04_UJrUUGTzJg8YSinacnPX5646",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/Claude/Claude项目/fengchang/智能风场界面开发.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t效果图![[界面效果图.png]]"
+          },
+          {
+            "id": "call_05_WYrQkr8Fzr3FPSFAddcB0939",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/.obsidian/app.json",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t{}"
+          },
+          {
+            "id": "call_06_z33Bv0AZ78GP25lu9MnN3687",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/.obsidian/appearance.json",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t{}"
+          },
+          {
+            "id": "call_07_ePlKy6zN1DL8IfPrbdkS7194",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/.obsidian/core-plugins.json",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t{\n2\t  \"file-explorer\": true,\n3\t  \"global-search\": true,\n4\t  \"switcher\": true,\n5\t  \"graph\": true,\n6\t  \"backlink\": true,\n7\t  \"canvas\": true,\n8\t  \"outgoing-link\": true,\n9\t  \"tag-pane\": true,\n10\t  \"footnotes\": false,\n11\t  \"properties\": true,\n12\t  \"page-preview\": true,\n13\t  \"daily-notes\": true,\n14\t  \"templates\": true,\n15\t  \"note-composer\": true,\n16\t  \"command-palette\": true,\n17\t  \"slash-command\": false,\n18\t  \"editor-status\": true,\n19\t  \"bookmarks\": true,\n20\t  \"markdown-importer\": false,\n21\t  \"zk-prefixer\": false,\n22\t  \"random-note\": false,\n23\t  \"outline\": true,\n24\t  \"word-count\": true,\n25\t  \"slides\": false,\n26\t  \"audio-recorder\": false,\n27\t  \"workspaces\": false,\n28\t  \"file-recovery\": true,\n29\t  \"publish\": false,\n30\t  \"sync\": true,"
+          },
+          {
+            "id": "call_08_tUsILrAwe6CFDKkBnoVc4826",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/.obsidian/graph.json",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t{\n2\t  \"collapse-filter\": true,\n3\t  \"search\": \"\",\n4\t  \"showTags\": false,\n5\t  \"showAttachments\": false,\n6\t  \"hideUnresolved\": false,\n7\t  \"showOrphans\": true,\n8\t  \"collapse-color-groups\": true,\n9\t  \"colorGroups\": [],\n10\t  \"collapse-display\": true,\n11\t  \"showArrow\": false,\n12\t  \"textFadeMultiplier\": 0,\n13\t  \"nodeSizeMultiplier\": 1,\n14\t  \"lineSizeMultiplier\": 1,\n15\t  \"collapse-forces\": true,\n16\t  \"centerStrength\": 0.518713248970312,\n17\t  \"repelStrength\": 10,\n18\t  \"linkStrength\": 1,\n19\t  \"linkDistance\": 250,\n20\t  \"scale\": 1,\n21\t  \"close\": true\n22\t}"
+          },
+          {
+            "id": "call_09_6SCDFbqlDf6ydTApKthK8298",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/.obsidian/workspace.json",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t{\n2\t  \"main\": {\n3\t    \"id\": \"3e5ffb5e324362d8\",\n4\t    \"type\": \"split\",\n5\t    \"children\": [\n6\t      {\n7\t        \"id\": \"bc47a7a927e223ed\",\n8\t        \"type\": \"tabs\",\n9\t        \"children\": [\n10\t          {\n11\t            \"id\": \"1358075c9370838f\",\n12\t            \"type\": \"leaf\",\n13\t            \"state\": {\n14\t              \"type\": \"markdown\",\n15\t              \"state\": {\n16\t                \"file\": \"实习心得.md\",\n17\t                \"mode\": \"source\",\n18\t                \"source\": false\n19\t              },\n20\t              \"icon\": \"lucide-file\",\n21\t              \"title\": \"实习心得\"\n22\t            }\n23\t          }\n24\t        ]\n25\t      }\n26\t    ],\n27\t    \"direction\": \"vertical\"\n28\t  },\n29\t  \"left\": {\n30\t    \"id\": \"f233c530e30014a7\","
+          },
+          {
+            "id": "call_00_H3SPHoWX4l9l9DBuG8lG8041",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/每日日报/2026-07-27-日报.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t今天主要是Claude code 环境的搭建和Obsdian的使用———通过karpathy的wiki方法构建知识库。利用obsidian和Claudain构建知识库，能够实现网页内容的识别并下载到库中智能分类，识别、分点总结重要内容，构建成可视化知识图库。\n2\t还有就是和另外一名同学一起为企业AI工作空间与专业智能体平台产品命名提出了一些小巧思。（智搭 搭域 SpaceMate WorkPal Cospace CoHive  Coinspirer）"
+          },
+          {
+            "id": "call_01_En6q2GelQ0pRujZs0HNJ9619",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/每日日报/2026-07-28-日报.md",
+              "limit": 50
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t## **今⽇研究了哪些内容（具体到⽂档 / 功能 / ⼯具）**\n2\t1.ai基础知识（01-AI概念文档）\n3\t2.学习git的初步使用能够将obsidian库上传至github并且可以定时保存。\n4\t\n5\t## **今⽇在 Git 上有什么产出（提交记录、⽂件变更说明）**\n6\t构建整个AI知识库并上传\n7\t## **遇到的问题和困惑**\n8\t1.多个obsidian库不能上传到同一个github仓库中。已解决->分开存\n9\t## **明⽇计划**\n10\t熟悉git，掌握其中更多的用法，上手Claude code，codex。"
+          },
+          {
+            "id": "call_02_4tRmBskSLoYCPBKBjvjq2482",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/每日日报/2026-07-29-日报.md",
+              "limit": 50
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t## **今⽇研究了哪些内容（具体到⽂档 / 功能 / ⼯具）**\n2\t1.git初步使用更加深入的了解每个指令的含义\n3\t2.Claude的使用：界面开发（智能风场界面开发）\n4\t3.codex的配置，Codex小游戏开发,重点研究了下ppt skill-ppt制作\n5\t4.Claude，Codex的使用心得\n6\t\n7\t\n8\t\n9\t## **今⽇在 Git 上有什么产出（提交记录、⽂件变更说明）**\n10\t1.git初步使用.md\n11\t2.Claude文件夹\n12\t3.Codex文件夹\n13\t\n14\t## **遇到的问题和困惑**\n15\tCodex配置问题，说不清楚之前无法配置，后面走第三方中转站配置成功\n16\t感觉对Claude和Codex的使用还在表面，使用的功能还比较浅\n17\t## **明⽇计划**\n18\tworkbuddy研究学习"
+          },
+          {
+            "id": "call_03_UEyf50WDXw9HlL7RK1J90560",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/每日日报/2026-07-30-日报.md",
+              "limit": 50
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t## **今⽇研究了哪些内容（具体到⽂档 / 功能 / ⼯具）**\n2\t1.workbuddy各功能熟悉并制作功能脑图\n3\t2.workbuddy上搭建一个专门针对 “C++ 算法竞赛 的 Agent\n4\t3.在workbuddy上⽤⼯作流⾃动化错题自动整理：基于2.中的agent，发送题目网页->生成题解->整理成md文档->将文档自动存放在obsidian中->整理成自己的算法题知识库\n5\t\n6\t\n7\t\n8\t## **今⽇在 Git 上有什么产出（提交记录、⽂件变更说明）**\n9\t1workbuddy文件夹：workbuddy功能脑图，workbuddy使用\n10\t## **遇到的问题和困惑**\n11\t\n12\t## **明⽇计划**\n13\t总结复盘这周的任务"
+          },
+          {
+            "id": "call_04_dpEuXIw6ymq80ZqmxwpG6994",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/summaries/ai基本知识.md",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: \"AI 基本知识 — 大模型生态核心概念\"\n3\tsource: \"raw/articles/AI基本知识.md\"\n4\tdate: 2026-07-28\n5\ttags: [AI, LLM, agent, rag, mcp, prompt-engineering]\n6\t---\n7\t\n8\t# AI 基本知识\n9\t\n10\t> 一篇系统性梳理大语言模型（LLM）生态中 7 个核心概念的入门文章，涵盖从底层原理到应用架构的完整链路。\n11\t\n12\t## 核心观点\n13\t\n14\t- LLM 是\"概率预测机\"而非\"知识数据库\"——其本质是预测下一个词，追求流畅度而非绝对真理\n15\t- AI Agent ≠ LLM：Agent 是能**规划、使用工具、采取行动**的自主系统，LLM 只是其推理引擎\n16\t- RAG 和 MCP 分工明确：RAG 解决\"知识从哪里来\"（检索事实），MCP 解决\"动作往哪里去\"（调用工具）\n17\t- Harness Engineering 是所有组件的\"安全笼和方向盘\"，保障生产环境的可靠性\n18\t- AI 幻觉的根本原因在于底层技术架构——概率预测、数据噪音、压缩损失，而非简单的 Bug\n19\t\n20\t## 关键细节\n21\t\n22\t| 概念 | 核心功能 | 解决的问题 |\n23\t|------|----------|-----------|\n24\t| **LLM** | 理解和生成自然语言，推理，写代码 | 通用智能引擎 |\n25\t| **Prompt Engineering** | 精确引导模型输出格式和质量 | 让通用模型聚焦特定任务 |\n26\t| **AI Agent** | 自主规划、工具调用、多步骤执行 | 从文本问答走向自主行动 |\n27\t| **RAG** | 基于外部知识的检索增强生成 | 幻觉与知识时效性 |\n28\t| **MCP** | 标准化 AI 与外部工具/数据的连接协议 | 自定义集成的碎片化 |\n29\t| **Harness Engineering** | 安全管控、状态管理、执行沙箱 | 生产环境的可靠性 |\n30\t| **Embedding** | 将文本转化为语义向量 | 让计算机理解语义相似度 |"
+          },
+          {
+            "id": "call_05_LdYCQZAFjo8BQ9A2aaB86646",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/log.md",
+              "limit": 80
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\tupdated: 2026-07-28\n3\t---\n4\t\n5\t# Wiki 操作日志\n6\t\n7\t> 按时间顺序记录所有操作：资料摄入、查询、整理。\n8\t> 每条记录以 `## [日期] 操作类型 | 标题` 格式开头。\n9\t\n10\t## [2026-07-27] init | 初始化 Wiki 结构\n11\t\n12\t- 创建三层架构：`raw/` → `wiki/` → `system/`\n13\t- 创建 `wiki/index.md` 和 `wiki/log.md`\n14\t- 创建 `system/CLAUDE.md` 工作流配置\n15\t\n16\t## [2026-07-27] cleanup | 删除已移除文章的相关条目\n17\t\n18\t- 原始文章 `Koszul Binomial Edge Ideals` 和 `企业AI工作空间与专业智能体平台产品规划书` 已被删除\n19\t- 移除所有相关的概念页、实体页、摘要页\n20\t- 更新 index 和 log 以反映当前状态\n21\t\n22\t## [2026-07-28] ingest | AI基本知识 —— 大规模摄入\n23\t\n24\t- 原始资料：`raw/articles/AI基本知识.md`（AI 大模型生态 10 大核心概念）\n25\t- 新建摘要：[[wiki/summaries/ai基本知识]]\n26\t- 新建概念页（10 个）：\n27\t  - [[wiki/concepts/llm]]\n28\t  - [[wiki/concepts/prompt-engineering]]\n29\t  - [[wiki/concepts/ai-agent]]\n30\t  - [[wiki/concepts/rag]]\n31\t  - [[wiki/concepts/mcp]]\n32\t  - [[wiki/concepts/harness-engineering]]\n33\t  - [[wiki/concepts/embedding]]\n34\t  - [[wiki/concepts/vector-database]]\n35\t  - [[wiki/concepts/fine-tuning]]\n36\t  - [[wiki/concepts/幻觉-hallucination]]\n37\t- 新建综合页：[[wiki/synthesis/ai-ecology]]（AI 技术栈四层架构全景）\n38\t- 更新 `wiki/index.md` 反映所有新页面\n39\t"
+          },
+          {
+            "id": "call_06_Xl3xSTpvrShRvbrCd05m6016",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/AI知识库/02-AI⼯具/workbuddy/workbuddy使用.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t## 自动化：\n2\t足球转会期每日资讯。\n3\t## 搭建agent\n4\t在 WorkBuddy 中搭建一个专门针对 **“C++ 算法竞赛（如 ACM/ICPC、CCPC、NOI/CSP、LeetCode/Codeforces）”** 的 Agent，能够显著提升你的刷题、调试、找 Bug 以及写题解的效率。\n5\t\n6\t## ⽤⼯作流⾃动化错题整理\n7\t通过搭建的agent，完成题解，将题解自动化转化为md文档收入到obsidian库中，方便总结成知识库。![[Pasted image 20260730163133.png]]"
+          },
+          {
+            "id": "call_07_qQMrfnxQnI3hgl9DaS4w9647",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/synthesis/ai-ecology.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# AI 生态技术栈全景——从 LLM 到应用的完整链路\n2\t\n3\t> 综合 `AI基本知识.md` 的内容，梳理大模型生态中核心概念的分层关系与协同逻辑。\n4\t\n5\t## 一句话全景\n6\t\n7\t> 开发者通过 **Prompt Engineering** 指导 **Agent（智能体）** 运作；Agent 遇到专业知识时，利用 **Embedding** 技术去 **向量数据库** 中通过 **RAG** 检索资料；遇到需要执行的操作，通过 **MCP 协议** 调用外部工具；而如果基础模型在特定领域表现不够专业，还可以通过 **Fine-tuning** 对其进行深度改造。**整个工作流程由 Harness Engineering 管理、测试和保障。**\n8\t\n9\t## 四层架构\n10\t\n11\t```\n12\t┌─────────────────────────────────────────────────┐\n13\t│            Harness Engineering                   │\n14\t│    （安全管控 · 状态管理 · 执行沙箱 · 回退）       │\n15\t├─────────────────────────────────────────────────┤\n16\t│                   AI Agent                       │\n17\t│    （感知 → 规划 → 执行 → 反思）                  │\n18\t├──────────────┬──────────────────┬───────────────┤\n19\t│     RAG      │       MCP       │   Prompt       │\n20\t│  (知识检索)   │    (工具调用)    │  (指令控制)    │\n21\t├───────┬──────┴──────┬───────────┴───────┬───────┤\n22\t│Embed  │  Vector DB  │  Fine-tuning      │  LLM  │\n23\t│(向量化)│  (向量存储)  │  (模型定制)       │ (引擎)│\n24\t└───────┴─────────────┴───────────────────┴───────┘\n25\t```\n26\t\n27\t## 概念关系图谱\n28\t\n29\t| 层级 | 概念 | 核心问题 | 类比 |\n30\t|------|------|---------|------|\n31\t| **引擎层** | [[wiki/concepts/llm\\|LLM]] | 通用智能从哪里来？ | 发动机 |\n32\t| **控制层** | [[wiki/concepts/prompt-engineering\\|Prompt Engineering]] | 如何让引擎做特定的事？ | 方向盘 |\n33\t| **代理层** | [[wiki/concepts/ai-agent\\|AI Agent]] | 如何让 AI 自主完成任务？ | 驾驶员 |\n34\t| **知识层** | [[wiki/concepts/rag\\|RAG]] | 知识不够/过时怎么办？ | 地图 |\n35\t| **工具层** | [[wiki/concepts/mcp\\|MCP 协议]] | 如何操作外部系统？ | 手脚 |\n36\t| **数据层** | [[wiki/concepts/embedding\\|Embedding]] | 如何让计算机理解语义？ | 翻译器 |\n37\t| **存储层** | [[wiki/concepts/vector-database\\|向量数据库]] | 海量语义如何高效检索？ | 图书馆 |\n38\t| **定制层** | [[wiki/concepts/fine-tuning\\|Fine-tuning]] | 通用模型不够专精怎么办？ | 进修 |\n39\t| **保障层** | [[wiki/concepts/harness-engineering\\|Harness Engineering]] | 如何确保安全可靠？ | 安全笼 |\n40\t| **局限层** | [[wiki/concepts/幻觉-hallucination\\|AI 幻觉]] | 为什么会出错？ | 固有特性 |\n41\t\n42\t## 关键洞察\n43\t\n44\t### 1. RAG vs Fine-tuning：何时用哪个？\n45\t\n46\t| 维度 | RAG | Fine-tuning |\n47\t|------|-----|-------------|\n48\t| 是否改变模型 | 否 | 是（改权重）|\n49\t| 更新知识 | 即时（换文档即可） | 慢（需重新训练）|\n50\t| 适合场景 | 事实查询、企业知识库 | 格式控制、风格固定、专业能力 |\n51\t| 成本 | 低 | 高 |\n52\t| **建议** | **能 RAG 就先 RAG，不够再微调** |\n53\t\n54\t### 2. RAG vs MCP：两种扩展的分工\n55\t\n56\t这两个概念最容易混淆。关键区别：\n57\t- **RAG** 是\"读\"——从外部获取**知识**（文档、数据库记录），扩充 LLM 的上下文\n58\t- **MCP** 是\"写\"——执行**操作**（发消息、更新数据库、运行代码），扩展 LLM 的行动能力\n59\t\n60\t### 3. AI 幻觉的双面性\n61\t\n62\t虽然工程上 RAG 是用来抑制幻觉的，但在创意领域（写作、头脑风暴、游戏设计），\"幻觉\"本质上就是**想象力**。看场景决定是抑制还是利用。\n63\t\n64\t## 引申思考\n65\t\n66\t1. 当前这 10 个概念中，哪些会随着技术发展而消失？哪些是永久的？\n67\t   - MCP 可能会被更好的标准取代\n68\t   - Prompt Engineering 可能随着模型理解能力的提升而变得不重要\n69\t   - **LLM、Agent、RAG** 这三个概念很可能长期存在\n70\t\n71\t2. 对于知识库构建者来说，RAG 和 LLM Wiki（[[karpathy的wiki方法论]]）是两种不同的范式：\n72\t   - RAG：运行时检索，不维护持久结构\n73\t   - LLM Wiki：构建时编译，维护持久结构\n74\t   - 两者可以互补——Wiki 作为\"半结构化知识层\"，RAG 作为\"实时检索层\"\n75\t"
+          },
+          {
+            "id": "call_00_LJyIpwpqhlXZM3PEqzbM4550",
+            "name": "Grep",
+            "input": {
+              "output_mode": "content",
+              "path": "D:/yxccangku",
+              "pattern": "\\[\\[.*?\\]\\]"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "karpathy知识库\\wiki\\synthesis\\ai-ecology.md:31:| **引擎层** | [[wiki/concepts/llm\\|LLM]] | 通用智能从哪里来？ | 发动机 |\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md:32:| **控制层** | [[wiki/concepts/prompt-engineering\\|Prompt Engineering]] | 如何让引擎做特定的事？ | 方向盘 |\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md:33:| **代理层** | [[wiki/concepts/ai-agent\\|AI Agent]] | 如何让 AI 自主完成任务？ | 驾驶员 |\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md:34:| **知识层** | [[wiki/concepts/rag\\|RAG]] | 知识不够/过时怎么办？ | 地图 |\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md:35:| **工具层** | [[wiki/concepts/mcp\\|MCP 协议]] | 如何操作外部系统？ | 手脚 |\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md:36:| **数据层** | [[wiki/concepts/embedding\\|Embedding]] | 如何让计算机理解语义？ | 翻译器 |\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md:37:| **存储层** | [[wiki/concepts/vector-database\\|向量数据库]] | 海量语义如何高效检索？ | 图书馆 |\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md:38:| **定制层** | [[wiki/concepts/fine-tuning\\|Fine-tuning]] | 通用模型不够专精怎么办？ | 进修 |\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md:39:| **保障层** | [[wiki/concepts/harness-engineering\\|Harness Engineering]] | 如何确保安全可靠？ | 安全笼 |\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md:40:| **局限层** | [[wiki/concepts/幻觉-hallucination\\|AI 幻觉]] | 为什么会出错？ | 固有特性 |\nkarpathy知识库\\wiki\\synthesis\\ai-ecology.md:71:2. 对于知识库构建者来说，RAG 和 LLM Wiki（[[karpathy的wiki方法论]]）是两种不同的范式：\nkarpathy知识库\\wiki\\log.md:25:- 新建摘要：[[wiki/summaries/ai基本知识]]\nkarpathy知识库\\wiki\\log.md:27:  - [[wiki/concepts/llm]]\nkarpathy知识库\\wiki\\log.md:28:  - [[wiki/concepts/prompt-engineering]]\nkarpathy知识库\\wiki\\log.md:29:  - [[wiki/concepts/ai-agent]]\nkarpathy知识库\\wiki\\log.md:30:  - [[wiki/concepts/rag]]\nkarpathy知识库\\wiki\\log.md:31:  - [[wiki/concepts/mcp]]\nkarpathy知识库\\wiki\\log.md:32:  - [[wiki/concepts/harness-engineering]]\nkarpathy知识库\\wiki\\log.md:33:  - [[wiki/concepts/embedding]]\nkarpathy知识库\\wiki\\log.md:34:  - [[wiki/concepts/vector-database]]\nkarpathy知识库\\wiki\\log.md:35:  - [[wiki/concepts/fine-tuning]]\nkarpathy知识库\\wiki\\log.md:36:  - [[wiki/concepts/幻觉-hallucination]]\nkarpathy知识库\\wiki\\log.md:37:- 新建综合页：[[wiki/synthesis/ai-ecology]]（AI 技术栈四层架构全景）\nkarpathy知识库\\wiki\\index.md:12:- [[raw/articles/AI基本知识.md]] — AI 大模型生态核心概念入门（LLM、Agent、RAG、MCP 等）\nkarpathy知识库\\wiki\\index.md:18:| [[wiki/concepts/llm\\|LLM]] | 大语言模型——基于海量文本训练的\"概率预测机\"，现代 AI 的引擎 |\nkarpathy知识库\\wiki\\index.md:19:| [[wiki/concepts/prompt-engineering\\|Prompt Engineering]] | 给大模型写指令的\"说话艺术\"，包括角色设定、Few-Shot、思维链等技巧 |\nkarpathy知识库\\wiki\\index.md:20:| [[wiki/concepts/ai-agent\\|AI Agent]] | 由 LLM 驱动的自主系统，能规划、用工具、多步骤执行任务 |\nkarpathy知识库\\wiki\\index.md:21:| [[wiki/concepts/rag\\|RAG]] | 检索增强生成——通过外部知识检索来增强 LLM 回答的准确性 |\nkarpathy知识库\\wiki\\index.md:22:| [[wiki/concepts/mcp\\|MCP 协议]] | \"AI 应用的 USB-C\"——标准化 AI 连接外部工具和数据的开放协议 |\nkarpathy知识库\\wiki\\index.md:23:| [[wiki/concepts/harness-engineering\\|Harness Engineering]] | AI 系统的安全保障框架，管理安全、状态和执行环境 |\nkarpathy知识库\\wiki\\index.md:24:| [[wiki/concepts/embedding\\|Embedding]] | 将文本转化为语义向量的技术，\"语义近则距离近\" |\nkarpathy知识库\\wiki\\index.md:25:| [[wiki/concepts/vector-database\\|向量数据库]] | 专门存储和检索向量的数据库，支撑大规模语义搜索 |\nkarpathy知识库\\wiki\\index.md:26:| [[wiki/concepts/fine-tuning\\|Fine-tuning]] | 在通用模型上二次训练以提升特定领域能力的\"二次进修\" |\nkarpathy知识库\\wiki\\index.md:27:| [[wiki/concepts/幻觉-hallucination\\|AI 幻觉]] | LLM 编造事实的固有特性——源于概率预测架构而非 Bug |\nkarpathy知识库\\wiki\\index.md:35:- [[wiki/summaries/ai基本知识\\|AI 基本知识摘要]] — 综合性 AI 技术科普文章的核心观点和关键细节\nkarpathy知识库\\wiki\\index.md:39:- [[wiki/synthesis/ai-ecology\\|AI 生态技术栈全景]] — 从 LLM 到应用的完整链路四层架构与概念关系图谱\nkarpathy知识库\\wiki\\concepts\\幻觉-hallucination.md:27:- [[raw/articles/AI基本知识.md]]\nkarpathy知识库\\wiki\\concepts\\幻觉-hallucination.md:31:- [[llm]]：幻觉是 LLM 架构的内生特性\nkarpathy知识库\\wiki\\concepts\\幻觉-hallucination.md:32:- [[rag]]：RAG 是缓解幻觉最主要的技术方案\nkarpathy知识库\\wiki\\concepts\\vector-database.md:23:- [[raw/articles/AI基本知识.md]]\nkarpathy知识库\\wiki\\concepts\\vector-database.md:27:- [[embedding]]：向量数据库存储的内容就是 Embedding 生成的向量\nkarpathy知识库\\wiki\\concepts\\vector-database.md:28:- [[rag]]：向量数据库是 RAG 架构中\"检索\"步骤的核心基础设施\nkarpathy知识库\\wiki\\concepts\\rag.md:26:- [[raw/articles/AI基本知识.md]]\nkarpathy知识库\\wiki\\concepts\\rag.md:30:- [[llm]]：RAG 为 LLM 提供外部知识支撑\nkarpathy知识库\\wiki\\concepts\\rag.md:31:- [[embedding]]：RAG 依赖 Embedding 将文本转化为可检索的向量\nkarpathy知识库\\wiki\\concepts\\rag.md:32:- [[vector-database]]：RAG 依赖向量数据库进行高效语义检索\nkarpathy知识库\\wiki\\concepts\\rag.md:33:- [[ai-agent]]：Agent 在需要事实知识时使用 RAG\nkarpathy知识库\\wiki\\concepts\\prompt-engineering.md:25:- [[raw/articles/AI基本知识.md]]\nkarpathy知识库\\wiki\\concepts\\prompt-engineering.md:29:- [[llm]]：Prompt 是驾驭 LLM 的核心手段\nkarpathy知识库\\wiki\\concepts\\prompt-engineering.md:30:- [[ai-agent]]：Agent 的系统提示词决定了其行为模式和能力边界\nkarpathy知识库\\wiki\\concepts\\mcp.md:25:- [[raw/articles/AI基本知识.md]]\nkarpathy知识库\\wiki\\concepts\\mcp.md:29:- [[ai-agent]]：Agent 通过 MCP 协议执行实际操作\nkarpathy知识库\\wiki\\concepts\\mcp.md:30:- [[llm]]：LLM 通过 MCP 扩展能力边界\nkarpathy知识库\\wiki\\concepts\\mcp.md:31:- [[harness-engineering]]：MCP 调用在 Harness 的安全沙箱中执行\n.obsidian\\plugins\\realclaudian\\styles.css:3336:/* Image embed styles - displays ![[image.png]] wikilinks as actual images */\n.obsidian\\plugins\\obsidian-git\\main.js:6:[Omitted long matching line]\n.obsidian\\plugins\\obsidian-git\\main.js:81:[Omitted long matching line]\n.obsidian\\plugins\\obsidian-git\\main.js:148:[Omitted long matching line]\n.obsidian\\plugins\\obsidian-git\\main.js:159:[Omitted long matching line]\n.obsidian\\plugins\\obsidian-git\\main.js:189:[Omitted long matching line]\n.obsidian\\plugins\\obsidian-git\\main.js:192:[Omitted long matching line]\n.obsidian\\plugins\\obsidian-git\\main.js:193:[Omitted long matching line]\n.obsidian\\plugins\\obsidian-git\\main.js:366:[Omitted long matching line]\nkarpathy知识库\\wiki\\concepts\\llm.md:23:- [[raw/articles/AI基本知识.md]]\nkarpathy知识库\\wiki\\concepts\\llm.md:27:- [[prompt-engineering]]：通过提示词引导 LLM 的输出\nkarpathy知识库\\wiki\\concepts\\llm.md:28:- [[ai-agent]]：LLM 是 Agent 的推理引擎，Agent = LLM + 规划 + 工具\nkarpathy知识库\\wiki\\concepts\\llm.md:29:- [[rag]]：RAG 为 LLM 提供外部知识，弥补其知识截止和幻觉问题\nkarpathy知识库\\wiki\\concepts\\llm.md:30:- [[幻觉-hallucination]]：LLM 的底层架构决定了幻觉是内在特性而非 Bug\nkarpathy知识库\\wiki\\concepts\\harness-engineering.md:26:- [[raw/articles/AI基本知识.md]]\nkarpathy知识库\\wiki\\concepts\\harness-engineering.md:30:- [[ai-agent]]：Harness 是 Agent 生产化部署的必备基础设施\nkarpathy知识库\\wiki\\concepts\\harness-engineering.md:31:- [[llm]]：Harness 管理 LLM 的输入输出和行为\nkarpathy知识库\\wiki\\concepts\\harness-engineering.md:32:- [[mcp]]：MCP 工具调用在 Harness 的沙箱保护下执行\nkarpathy知识库\\wiki\\concepts\\fine-tuning.md:26:- [[raw/articles/AI基本知识.md]]\nkarpathy知识库\\wiki\\concepts\\fine-tuning.md:30:- [[llm]]：微调是修改 LLM 权重的方法\nkarpathy知识库\\wiki\\concepts\\fine-tuning.md:31:- [[prompt-engineering]]：微调和 prompt 是两种互补的模型定制手段\nkarpathy知识库\\wiki\\concepts\\embedding.md:23:- [[raw/articles/AI基本知识.md]]\nkarpathy知识库\\wiki\\concepts\\embedding.md:27:- [[rag]]：Embedding 是 RAG 管线的第一步——将文档转化为可检索的向量\nkarpathy知识库\\wiki\\concepts\\embedding.md:28:- [[vector-database]]：向量数据库专门用于存储和检索 Embedding\nkarpathy知识库\\wiki\\concepts\\embedding.md:29:- [[llm]]：LLM 内部也使用 Embedding 层来处理输入文本\nkarpathy知识库\\wiki\\concepts\\ai-agent.md:25:- [[raw/articles/AI基本知识.md]]\nkarpathy知识库\\wiki\\concepts\\ai-agent.md:29:- [[llm]]：Agent 的核心推理引擎\nkarpathy知识库\\wiki\\concepts\\ai-agent.md:30:- [[prompt-engineering]]：Agent 的指令由 prompt 驱动\nkarpathy知识库\\wiki\\concepts\\ai-agent.md:31:- [[rag]]：Agent 通过 RAG 获取外部事实知识\nkarpathy知识库\\wiki\\concepts\\ai-agent.md:32:- [[mcp]]：Agent 通过 MCP 调用外部工具\nkarpathy知识库\\wiki\\concepts\\ai-agent.md:33:- [[harness-engineering]]：Agent 的安全和可靠性由 Harness 保障\n.obsidian\\plugins\\realclaudian\\main.js:12:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:42:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:93:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:101:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:109:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:117:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:125:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:133:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:141:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:149:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:157:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:207:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:223:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:509:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:598:- **Links**: Internal Wiki-links \\`[[note-name]]\\` or \\`[[folder/note-name]]\\`. External links \\`[text](url)\\`.\n.obsidian\\plugins\\realclaudian\\main.js:606:- \\u2713 Use: \\`[[folder/note.md]]\\` or \\`[[note]]\\`\n.obsidian\\plugins\\realclaudian\\main.js:609:**Image embeds:** Use \\`![[image.png]]\\` to display images directly in chat. Images render visually, making it easy to show diagrams, screenshots, or visual content you're discussing.\n.obsidian\\plugins\\realclaudian\\main.js:612:- \"I found your notes in [[30.areas/finance/Investment lessons/2024.Current trading lessons.md]]\"\n.obsidian\\plugins\\realclaudian\\main.js:613:- \"See [[daily notes/2024-01-15]] for more details\"\n.obsidian\\plugins\\realclaudian\\main.js:614:- \"Here's the diagram: ![[attachments/architecture.png]]\"\n.obsidian\\plugins\\realclaudian\\main.js:643:**Local images** (\\`![[image.jpg]]\\`):\n.obsidian\\plugins\\realclaudian\\main.js:659:Then read with \\`Read file_path=\"${r}$img_name\"\\`, and replace the markdown link \\`![alt](url)\\` with \\`![[${r}$img_name]]\\` in the note.\n.obsidian\\plugins\\realclaudian\\main.js:696:`}[[${e}]]\n.obsidian\\plugins\\realclaudian\\main.js:831:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:835:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:837:[Omitted long matching line]\n.obsidian\\plugins\\realclaudian\\main.js:842:[Omitted long matching line]\nkarpathy知识库\\system\\CLAUDE.md:123:- Wiki 链接使用 `[[wiki/concepts/xxx]]` 格式\nkarpathy知识库\\system\\CLAUDE.md:124:- 引用来源使用 `[[raw/articles/xxx]]` 格式\nAI知识库\\02-AI⼯具\\Codex\\Codex项目\\类马里奥小游戏.md:3:![[skybound_sprout.exe]]![[ai小游戏.png]]\nAI知识库\\02-AI⼯具\\Codex\\Codex项目\\介绍ppt.md:1:![[index 2.html]]\nAI知识库\\02-AI⼯具\\workbuddy\\workbuddy使用.md:7:通过搭建的agent，完成题解，将题解自动化转化为md文档收入到obsidian库中，方便总结成知识库。![[Pasted image 20260730163133.png]]\nAI知识库\\02-AI⼯具\\workbuddy\\workbuddy功能脑图.md:1:![[workbuddy功能脑图.png|697]]\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:14:3. **Link related notes** using wikilinks (`[[Note]]`) for internal vault connections, or standard Markdown links for external URLs.\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:15:4. **Embed content** from other notes, images, or PDFs using the `![[embed]]` syntax. See [EMBEDS.md](references/EMBEDS.md) for all embed types.\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:19:> When choosing between wikilinks and Markdown links: use `[[wikilinks]]` for notes within the vault (Obsidian tracks renames automatically) and `[text](url)` for external URLs only.\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:24:[[Note Name]]                          Link to note\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:25:[[Note Name|Display Text]]             Custom display text\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:26:[[Note Name#Heading]]                  Link to heading\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:27:[[Note Name#^block-id]]                Link to block\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:28:[[#Heading in same note]]              Same-note heading link\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:50:![[Note Name]]                         Embed full note\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:51:![[Note Name#Heading]]                 Embed section\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:52:![[image.png]]                         Embed image\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:53:![[image.png|300]]                     Embed image with width\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:54:![[document.pdf#page=3]]               Embed PDF page\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:169:This project aims to [[improve workflow]] using modern techniques.\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:183:The algorithm uses $O(n \\log n)$ sorting. See [[Algorithm Notes#Sorting]] for details.\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:185:![[Architecture Diagram.png|600]]\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:187:Reviewed in [[Meeting Notes 2024-01-10#Decisions]].\n.obsidian\\plugins\\obsidian-bases\\SKILL.md:421:![[MyBase.base]]\n.obsidian\\plugins\\obsidian-bases\\SKILL.md:424:![[MyBase.base#View Name]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:6:![[Note Name]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:7:![[Note Name#Heading]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:8:![[Note Name#^block-id]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:14:![[image.png]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:15:![[image.png|640x480]]    Width x Height\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:16:![[image.png|300]]        Width only (maintains aspect ratio)\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:29:![[audio.mp3]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:30:![[audio.ogg]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:36:![[document.pdf]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:37:![[document.pdf#page=3]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:38:![[document.pdf#height=400]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:44:![[BaseFile.base]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:45:![[BaseFile.base#View Name]]\n.obsidian\\plugins\\obsidian-markdown\\references\\EMBEDS.md:51:![[Note#^list-id]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:14:3. **Link related notes** using wikilinks (`[[Note]]`) for internal vault connections, or standard Markdown links for external URLs.\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:15:4. **Embed content** from other notes, images, or PDFs using the `![[embed]]` syntax. See [EMBEDS.md](references/EMBEDS.md) for all embed types.\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:19:> When choosing between wikilinks and Markdown links: use `[[wikilinks]]` for notes within the vault (Obsidian tracks renames automatically) and `[text](url)` for external URLs only.\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:24:[[Note Name]]                          Link to note\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:25:[[Note Name|Display Text]]             Custom display text\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:26:[[Note Name#Heading]]                  Link to heading\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:27:[[Note Name#^block-id]]                Link to block\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:28:[[#Heading in same note]]              Same-note heading link\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:50:![[Note Name]]                         Embed full note\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:51:![[Note Name#Heading]]                 Embed section\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:52:![[image.png]]                         Embed image\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:53:![[image.png|300]]                     Embed image with width\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:54:![[document.pdf#page=3]]               Embed PDF page\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:169:This project aims to [[improve workflow]] using modern techniques.\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:183:The algorithm uses $O(n \\log n)$ sorting. See [[Algorithm Notes#Sorting]] for details.\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:185:![[Architecture Diagram.png|600]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:187:Reviewed in [[Meeting Notes 2024-01-10#Decisions]].\n.obsidian\\plugins\\obsidian-markdown\\references\\PROPERTIES.md:34:| Links | `related: \"[[Other Note]]\"` |\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:6:![[Note Name]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:7:![[Note Name#Heading]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:8:![[Note Name#^block-id]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:14:![[image.png]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:15:![[image.png|640x480]]    Width x Height\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:16:![[image.png|300]]        Width only (maintains aspect ratio)\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:29:![[audio.mp3]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:30:![[audio.ogg]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:36:![[document.pdf]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:37:![[document.pdf#page=3]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:38:![[document.pdf#height=400]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:44:![[BaseFile.base]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:45:![[BaseFile.base#View Name]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\EMBEDS.md:51:![[Note#^list-id]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\PROPERTIES.md:34:| Links | `related: \"[[Other Note]]\"` |\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-bases\\SKILL.md:421:![[MyBase.base]]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-bases\\SKILL.md:424:![[MyBase.base#View Name]]\nAI知识库\\02-AI⼯具\\Codex\\obsidian配置与插件.md:24:- **内部链接格式**：`编辑器 (Editor)` -> 打开 **自动补全 `[[双链]]`**；`文件与链接 (Files and links)` -> **将“内部链接形式”设置为“相对路径”**（这样即使移动文件夹，笔记里的图片和链接也不会失效）。\nAI知识库\\02-AI⼯具\\Codex\\obsidian配置与插件.md:37:- `[[Python 基础语法]]`：如果该笔记已存在，会直接跳转；如果不存在，点击会自动创建该新笔记。\nAI知识库\\02-AI⼯具\\Codex\\obsidian配置与插件.md:39:- `[[Python 基础语法|点击查看 Python 语法]]`：使用管道符 `|` 可以自定义链接显示的别名。\nAI知识库\\02-AI⼯具\\Codex\\obsidian配置与插件.md:41:- `[[Python 基础语法#数据类型]]`：使用 `#` 可以精确定位并链接到特定标题。\nAI知识库\\02-AI⼯具\\Claude\\Claude项目\\fengchang\\智能风场界面开发.md:1:效果图![[界面效果图.png]]\n.obsidian\\plugins\\obsidian42-brat\\main.js:1:[Omitted long matching line]\n.obsidian\\plugins\\obsidian42-brat\\main.js:42:[Omitted long matching line]"
+          },
+          {
+            "id": "call_01_JFXJyTVnP9kQfX6v0PkF7594",
+            "name": "Grep",
+            "input": {
+              "output_mode": "content",
+              "path": "D:/yxccangku",
+              "pattern": "^tags:"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "karpathy知识库\\system\\templates\\concept-template.md:4:tags: []\nkarpathy知识库\\system\\templates\\summary-template.md:5:tags: []\nkarpathy知识库\\system\\CLAUDE.md:65:tags: []\nkarpathy知识库\\system\\CLAUDE.md:85:tags: []\nkarpathy知识库\\system\\CLAUDE.md:106:tags: []\nkarpathy知识库\\system\\templates\\entity-template.md:4:tags: []\nkarpathy知识库\\wiki\\summaries\\ai基本知识.md:5:tags: [AI, LLM, agent, rag, mcp, prompt-engineering]\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:82:tags:\n.obsidian\\plugins\\obsidian-markdown\\SKILL.md:161:tags:\nkarpathy知识库\\wiki\\concepts\\幻觉-hallucination.md:4:tags: [AI, llm, hallucination, limitation]\nkarpathy知识库\\wiki\\concepts\\llm.md:4:tags: [AI, LLM, foundation]\nkarpathy知识库\\wiki\\concepts\\prompt-engineering.md:4:tags: [AI, prompt, llm]\nkarpathy知识库\\wiki\\concepts\\vector-database.md:4:tags: [AI, database, vector, retrieval]\nkarpathy知识库\\wiki\\concepts\\harness-engineering.md:4:tags: [AI, harness, safety, engineering]\nkarpathy知识库\\wiki\\concepts\\mcp.md:4:tags: [AI, mcp, protocol, tool-use]\nkarpathy知识库\\wiki\\concepts\\rag.md:4:tags: [AI, rag, retrieval]\nkarpathy知识库\\wiki\\concepts\\embedding.md:4:tags: [AI, embedding, vector]\n.obsidian\\plugins\\obsidian-markdown\\references\\PROPERTIES.md:9:tags:\n.obsidian\\plugins\\obsidian-markdown\\references\\PROPERTIES.md:57:tags:\nkarpathy知识库\\wiki\\concepts\\fine-tuning.md:4:tags: [AI, fine-tuning, training, llm]\nkarpathy知识库\\wiki\\concepts\\ai-agent.md:4:tags: [AI, agent, llm]\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:82:tags:\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\SKILL.md:161:tags:\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\PROPERTIES.md:9:tags:\n.obsidian\\plugins\\obsidian-skills-main\\skills\\obsidian-markdown\\references\\PROPERTIES.md:57:tags:"
+          },
+          {
+            "id": "call_02_JocdWdRbwPnCv7pghBUA1600",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/log.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\tupdated: 2026-07-28\n3\t---\n4\t\n5\t# Wiki 操作日志\n6\t\n7\t> 按时间顺序记录所有操作：资料摄入、查询、整理。\n8\t> 每条记录以 `## [日期] 操作类型 | 标题` 格式开头。\n9\t\n10\t## [2026-07-27] init | 初始化 Wiki 结构\n11\t\n12\t- 创建三层架构：`raw/` → `wiki/` → `system/`\n13\t- 创建 `wiki/index.md` 和 `wiki/log.md`\n14\t- 创建 `system/CLAUDE.md` 工作流配置\n15\t\n16\t## [2026-07-27] cleanup | 删除已移除文章的相关条目\n17\t\n18\t- 原始文章 `Koszul Binomial Edge Ideals` 和 `企业AI工作空间与专业智能体平台产品规划书` 已被删除\n19\t- 移除所有相关的概念页、实体页、摘要页\n20\t- 更新 index 和 log 以反映当前状态\n21\t\n22\t## [2026-07-28] ingest | AI基本知识 —— 大规模摄入\n23\t\n24\t- 原始资料：`raw/articles/AI基本知识.md`（AI 大模型生态 10 大核心概念）\n25\t- 新建摘要：[[wiki/summaries/ai基本知识]]\n26\t- 新建概念页（10 个）：\n27\t  - [[wiki/concepts/llm]]\n28\t  - [[wiki/concepts/prompt-engineering]]\n29\t  - [[wiki/concepts/ai-agent]]\n30\t  - [[wiki/concepts/rag]]\n31\t  - [[wiki/concepts/mcp]]\n32\t  - [[wiki/concepts/harness-engineering]]\n33\t  - [[wiki/concepts/embedding]]\n34\t  - [[wiki/concepts/vector-database]]\n35\t  - [[wiki/concepts/fine-tuning]]\n36\t  - [[wiki/concepts/幻觉-hallucination]]\n37\t- 新建综合页：[[wiki/synthesis/ai-ecology]]（AI 技术栈四层架构全景）\n38\t- 更新 `wiki/index.md` 反映所有新页面\n39\t"
+          },
+          {
+            "id": "call_03_ScF2QLbHTZ7NDg59LC0f6179",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/wiki/index.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\tupdated: 2026-07-28\n3\t---\n4\t\n5\t# Wiki Index\n6\t\n7\t> 这是 LLM Wiki 的知识库目录。每个页面列出链接、一句话摘要和元数据。\n8\t> 按类别组织。每次摄入新资料后由 LLM 自动更新。\n9\t\n10\t## Sources（原始资料）\n11\t\n12\t- [[raw/articles/AI基本知识.md]] — AI 大模型生态核心概念入门（LLM、Agent、RAG、MCP 等）\n13\t\n14\t## Concepts（概念）\n15\t\n16\t| 页面 | 一句话摘要 |\n17\t|------|-----------|\n18\t| [[wiki/concepts/llm\\|LLM]] | 大语言模型——基于海量文本训练的\"概率预测机\"，现代 AI 的引擎 |\n19\t| [[wiki/concepts/prompt-engineering\\|Prompt Engineering]] | 给大模型写指令的\"说话艺术\"，包括角色设定、Few-Shot、思维链等技巧 |\n20\t| [[wiki/concepts/ai-agent\\|AI Agent]] | 由 LLM 驱动的自主系统，能规划、用工具、多步骤执行任务 |\n21\t| [[wiki/concepts/rag\\|RAG]] | 检索增强生成——通过外部知识检索来增强 LLM 回答的准确性 |\n22\t| [[wiki/concepts/mcp\\|MCP 协议]] | \"AI 应用的 USB-C\"——标准化 AI 连接外部工具和数据的开放协议 |\n23\t| [[wiki/concepts/harness-engineering\\|Harness Engineering]] | AI 系统的安全保障框架，管理安全、状态和执行环境 |\n24\t| [[wiki/concepts/embedding\\|Embedding]] | 将文本转化为语义向量的技术，\"语义近则距离近\" |\n25\t| [[wiki/concepts/vector-database\\|向量数据库]] | 专门存储和检索向量的数据库，支撑大规模语义搜索 |\n26\t| [[wiki/concepts/fine-tuning\\|Fine-tuning]] | 在通用模型上二次训练以提升特定领域能力的\"二次进修\" |\n27\t| [[wiki/concepts/幻觉-hallucination\\|AI 幻觉]] | LLM 编造事实的固有特性——源于概率预测架构而非 Bug |\n28\t\n29\t## Entities（实体）\n30\t\n31\t_暂无条目。_\n32\t\n33\t## Summaries（摘要）\n34\t\n35\t- [[wiki/summaries/ai基本知识\\|AI 基本知识摘要]] — 综合性 AI 技术科普文章的核心观点和关键细节\n36\t\n37\t## Synthesis（综合/对比分析）\n38\t\n39\t- [[wiki/synthesis/ai-ecology\\|AI 生态技术栈全景]] — 从 LLM 到应用的完整链路四层架构与概念关系图谱\n40\t\n41\t## Queries（问答产出）\n42\t\n43\t_暂无条目。_\n44\t\n45\t---\n46\t\n47\t## 统计\n48\t\n49\t- 总页面数：16（索引 + 日志 + 3 个框架页面 + 1 摘要 + 10 概念 + 1 综合）\n50\t- 资料来源数：1\n51\t- 最后更新：2026-07-28\n52\t"
+          },
+          {
+            "id": "call_00_Ska3hm6IbXlfMVL2duuu8903",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/karpathy知识库/system/CLAUDE.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# CLAUDE.md — LLM Wiki Schema\n2\t\n3\t## 三层架构\n4\t\n5\t```\n6\tvault/\n7\t├── raw/               # 原始资料（只读，LLM 永不修改）\n8\t│   ├── articles/      # 文章/网页剪藏\n9\t│   ├── books/         # 书籍章节\n10\t│   └── assets/        # 图片/附件\n11\t├── wiki/              # LLM 生成的 Wiki（LLM 读写）\n12\t│   ├── concepts/      # 概念页面\n13\t│   ├── entities/      # 实体页面（人物、组织、项目等）\n14\t│   ├── summaries/     # 单篇资料摘要\n15\t│   ├── synthesis/     # 综合对比/分析\n16\t│   ├── queries/       # 问答产出（可归档的优质答案）\n17\t│   ├── index.md       # 内容目录（每次摄入更新）\n18\t│   └── log.md         # 操作日志（追加写入）\n19\t└── system/            # 配置与模板（LLM 读写）\n20\t    ├── CLAUDE.md      # 本文件 — 工作流配置\n21\t    └── templates/     # 页面模板\n22\t```\n23\t\n24\t## 工作流\n25\t\n26\t### 1. 摄入（Ingest）\n27\t\n28\t当你将新资料放入 `raw/` 目录并告诉我处理后：\n29\t\n30\t1. 读取原始资料内容\n31\t2. 与你讨论关键要点，确定重点\n32\t3. 在 `wiki/summaries/` 创建摘要页面\n33\t4. 更新 `wiki/index.md`\n34\t5. 更新或创建 `wiki/concepts/` 和 `wiki/entities/` 中的相关页面\n35\t6. 在 `wiki/log.md` 追加记录\n36\t\n37\t### 2. 查询（Query）\n38\t\n39\t当你提问时：\n40\t\n41\t1. 读取 `wiki/index.md` 定位相关页面\n42\t2. 深入阅读相关页面\n43\t3. 综合回答，引用来源\n44\t4. 如果有长期价值的回答，归档到 `wiki/queries/`\n45\t\n46\t### 3. 整理（Lint）\n47\t\n48\t当你要求健康检查时：\n49\t\n50\t1. 检查页面间的矛盾\n51\t2. 检查过时的观点\n52\t3. 检查孤儿页面（无入链）\n53\t4. 检查缺失的交叉引用\n54\t5. 建议新的探索方向\n55\t\n56\t## Wiki 页面规范\n57\t\n58\t### 摘要页面（summaries/）\n59\t\n60\t```\n61\t---\n62\ttitle: \"\"\n63\tsource: \"raw/articles/...\"\n64\tdate: 2026-07-27\n65\ttags: []\n66\t---\n67\t\n68\t# [标题]\n69\t\n70\t## 核心观点\n71\t\n72\t## 关键细节\n73\t\n74\t## 与现有知识的关系\n75\t\n76\t## 个人思考\n77\t```\n78\t\n79\t### 概念页面（concepts/）\n80\t\n81\t```\n82\t---\n83\ttitle: \"\"\n84\taliases: []\n85\ttags: []\n86\trelated: []\n87\t---\n88\t\n89\t# [概念名称]\n90\t\n91\t## 定义\n92\t\n93\t## 要点\n94\t\n95\t## 相关来源\n96\t\n97\t## 与其他概念的联系\n98\t```\n99\t\n100\t### 实体页面（entities/）\n101\t\n102\t```\n103\t---\n104\ttitle: \"\"\n105\ttype: person|organization|project|etc.\n106\ttags: []\n107\trelated: []\n108\t---\n109\t\n110\t# [实体名称]\n111\t\n112\t## 概述\n113\t\n114\t## 相关来源\n115\t\n116\t## 关联\n117\t```\n118\t\n119\t## 约定\n120\t\n121\t- 所有文件使用 Markdown 格式\n122\t- 页面使用 YAML frontmatter（便于 Dataview 查询）\n123\t- Wiki 链接使用 `[[wiki/concepts/xxx]]` 格式\n124\t- 引用来源使用 `[[raw/articles/xxx]]` 格式\n125\t- 英文名词保留原文，解释使用中文\n126\t"
+          },
+          {
+            "id": "call_01_fTeFi91z5MbEPezaw2vT6466",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/.obsidian/core-plugins.json",
+              "limit": 50
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t{\n2\t  \"file-explorer\": true,\n3\t  \"global-search\": true,\n4\t  \"switcher\": true,\n5\t  \"graph\": true,\n6\t  \"backlink\": true,\n7\t  \"canvas\": true,\n8\t  \"outgoing-link\": true,\n9\t  \"tag-pane\": true,\n10\t  \"footnotes\": false,\n11\t  \"properties\": true,\n12\t  \"page-preview\": true,\n13\t  \"daily-notes\": true,\n14\t  \"templates\": true,\n15\t  \"note-composer\": true,\n16\t  \"command-palette\": true,\n17\t  \"slash-command\": false,\n18\t  \"editor-status\": true,\n19\t  \"bookmarks\": true,\n20\t  \"markdown-importer\": false,\n21\t  \"zk-prefixer\": false,\n22\t  \"random-note\": false,\n23\t  \"outline\": true,\n24\t  \"word-count\": true,\n25\t  \"slides\": false,\n26\t  \"audio-recorder\": false,\n27\t  \"workspaces\": false,\n28\t  \"file-recovery\": true,\n29\t  \"publish\": false,\n30\t  \"sync\": true,\n31\t  \"bases\": true,\n32\t  \"webviewer\": false\n33\t}"
+          },
+          {
+            "id": "call_02_GI8e2NObLU2IAX6QJhVS8425",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/.obsidian/graph.json",
+              "limit": 30
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t{\n2\t  \"collapse-filter\": true,\n3\t  \"search\": \"\",\n4\t  \"showTags\": false,\n5\t  \"showAttachments\": false,\n6\t  \"hideUnresolved\": false,\n7\t  \"showOrphans\": true,\n8\t  \"collapse-color-groups\": true,\n9\t  \"colorGroups\": [],\n10\t  \"collapse-display\": true,\n11\t  \"showArrow\": false,\n12\t  \"textFadeMultiplier\": 0,\n13\t  \"nodeSizeMultiplier\": 1,\n14\t  \"lineSizeMultiplier\": 1,\n15\t  \"collapse-forces\": true,\n16\t  \"centerStrength\": 0.518713248970312,\n17\t  \"repelStrength\": 10,\n18\t  \"linkStrength\": 1,\n19\t  \"linkDistance\": 250,\n20\t  \"scale\": 0.2588386562181621,\n21\t  \"close\": false\n22\t}"
+          },
+          {
+            "id": "call_03_uoK8pooIMBGcUj68Eh2L1833",
+            "name": "Read",
+            "input": {
+              "file_path": "D:/yxccangku/.gitignore"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# 忽略操作系统自动生成的文件\n2\t.DS_Store\n3\tThumbs.db\n4\t\n5\t# 忽略Obsidian的缓存文件\n6\t.obsidian/cache\n7\t\n8\t# 忽略特定设备的工作区状态，这是避免冲突的关键\n9\t# 这是你本次操作的核心目标\n10\t.obsidian/workspace.json\n11\t.obsidian/workspaces.json\n12\t.obsidian/workspace-mobile.json\n13\t\n14\t# 忽略其他不建议同步的文件\n15\t.obsidian/daily-notes.json\n16\t.obsidian/facets.json\n17\t.obsidian/starred.json\n18\t\n19\t# 忽略插件的缓存和数据文件 (可选，但推荐)\n20\t# .obsidian/plugins/some-plugin/data.json\n21\t.obsidian/plugins/recent-files-obsidian/data.json\n22\t\n23\t# 忽略垃圾箱文件夹\n24\t.trash/"
+          }
+        ],
+        "asyncStatus": "completed",
+        "agentId": "a9817dd3a5106c892",
+        "startedAt": 1785461128280,
+        "result": "Let me also read the remaining CLAUDE.md and the main .obsidian config files.",
+        "completedAt": 1785461277205
+      }
+    }
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 3186,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 18560,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 21746,
+    "percentage": 11
+  }
+}
