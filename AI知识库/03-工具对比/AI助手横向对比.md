@@ -9,6 +9,3 @@ related: [Claude体验, Codex体验, workbuddy学习]
 
 ## 相关链接
 
-- [[Claude体验|Claude 体验]] — Claude 使用心得
-- [[Codex体验|Codex 体验]] — Codex 使用心得
-- [[workbuddy学习|WorkBuddy 学习]] — WorkBuddy 使用心得
