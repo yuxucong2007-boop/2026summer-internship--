@@ -1,0 +1,25 @@
+{
+  "id": "conv-1786007740610-7jkxtdr0g",
+  "providerId": "claude",
+  "title": "Consolidate Open WebUI chat, core, API tool notes",
+  "titleGenerationStatus": "success",
+  "createdAt": 1786007740610,
+  "updatedAt": 1786007909526,
+  "lastResponseAt": 1786007909526,
+  "sessionId": "aebfe111-ff6b-460b-a69a-bb78ea257a0f",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "aebfe111-ff6b-460b-a69a-bb78ea257a0f"
+  },
+  "currentNote": "Open WebUI 深度研究 + WorkBuddy 对标/Open WebUI深度研究/open-webui-core-research-part.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 6936,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 27648,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 34584,
+    "percentage": 17
+  }
+}
