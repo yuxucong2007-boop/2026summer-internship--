@@ -1,0 +1,25 @@
+{
+  "id": "conv-1786001511389-kosdmkus5",
+  "providerId": "claude",
+  "title": "Simplify comparison matrix",
+  "titleGenerationStatus": "success",
+  "createdAt": 1786001511402,
+  "updatedAt": 1786001550206,
+  "lastResponseAt": 1786001550206,
+  "sessionId": "7d15ca9a-da58-44e4-90c3-6a075a8550f3",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "7d15ca9a-da58-44e4-90c3-6a075a8550f3"
+  },
+  "currentNote": "Open WebUI 深度研究 + WorkBuddy 对标/OpenWebUI-WorkBuddy功能对比矩阵.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 3936,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 21248,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 25184,
+    "percentage": 13
+  }
+}
