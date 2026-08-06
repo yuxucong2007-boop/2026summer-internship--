@@ -4,8 +4,8 @@
   "title": "Simplify comparison matrix",
   "titleGenerationStatus": "success",
   "createdAt": 1786001511402,
-  "updatedAt": 1786001550206,
-  "lastResponseAt": 1786001550206,
+  "updatedAt": 1786001855265,
+  "lastResponseAt": 1786001855265,
   "sessionId": "7d15ca9a-da58-44e4-90c3-6a075a8550f3",
   "selectedModel": "haiku",
   "providerState": {
@@ -14,12 +14,12 @@
   "currentNote": "Open WebUI 深度研究 + WorkBuddy 对标/OpenWebUI-WorkBuddy功能对比矩阵.md",
   "usage": {
     "model": "haiku",
-    "inputTokens": 3936,
+    "inputTokens": 2935,
     "cacheCreationInputTokens": 0,
-    "cacheReadInputTokens": 21248,
+    "cacheReadInputTokens": 27392,
     "contextWindow": 200000,
     "contextWindowIsAuthoritative": true,
-    "contextTokens": 25184,
-    "percentage": 13
+    "contextTokens": 30327,
+    "percentage": 15
   }
 }
