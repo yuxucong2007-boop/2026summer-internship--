@@ -7,10 +7,15 @@
       },
       {
         "draftModel": "haiku",
-        "tabId": "tab-1786001485119-j0z45at",
-        "conversationId": "conv-1786001511389-kosdmkus5"
+        "tabId": "tab-1786007181701-sgipnbc",
+        "conversationId": null
+      },
+      {
+        "draftModel": "haiku",
+        "tabId": "tab-1786007196414-48tdwfx",
+        "conversationId": null
       }
     ],
-    "activeTabId": "tab-1786001485119-j0z45at"
+    "activeTabId": "tab-1786007196414-48tdwfx"
   }
 }
