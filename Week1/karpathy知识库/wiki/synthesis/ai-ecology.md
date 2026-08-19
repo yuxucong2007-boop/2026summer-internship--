@@ -28,16 +28,16 @@
 
 | 层级 | 概念 | 核心问题 | 类比 |
 |------|------|---------|------|
-| **引擎层** | [[wiki/concepts/llm\|LLM]] | 通用智能从哪里来？ | 发动机 |
-| **控制层** | [[wiki/concepts/prompt-engineering\|Prompt Engineering]] | 如何让引擎做特定的事？ | 方向盘 |
-| **代理层** | [[wiki/concepts/ai-agent\|AI Agent]] | 如何让 AI 自主完成任务？ | 驾驶员 |
-| **知识层** | [[wiki/concepts/rag\|RAG]] | 知识不够/过时怎么办？ | 地图 |
-| **工具层** | [[wiki/concepts/mcp\|MCP 协议]] | 如何操作外部系统？ | 手脚 |
-| **数据层** | [[wiki/concepts/embedding\|Embedding]] | 如何让计算机理解语义？ | 翻译器 |
-| **存储层** | [[wiki/concepts/vector-database\|向量数据库]] | 海量语义如何高效检索？ | 图书馆 |
-| **定制层** | [[wiki/concepts/fine-tuning\|Fine-tuning]] | 通用模型不够专精怎么办？ | 进修 |
-| **保障层** | [[wiki/concepts/harness-engineering\|Harness Engineering]] | 如何确保安全可靠？ | 安全笼 |
-| **局限层** | [[wiki/concepts/幻觉-hallucination\|AI 幻觉]] | 为什么会出错？ | 固有特性 |
+| **引擎层** | [[llm\|LLM]] | 通用智能从哪里来？ | 发动机 |
+| **控制层** | [[prompt-engineering\|Prompt Engineering]] | 如何让引擎做特定的事？ | 方向盘 |
+| **代理层** | [[ai-agent\|AI Agent]] | 如何让 AI 自主完成任务？ | 驾驶员 |
+| **知识层** | [[rag\|RAG]] | 知识不够/过时怎么办？ | 地图 |
+| **工具层** | [[mcp\|MCP 协议]] | 如何操作外部系统？ | 手脚 |
+| **数据层** | [[embedding\|Embedding]] | 如何让计算机理解语义？ | 翻译器 |
+| **存储层** | [[vector-database\|向量数据库]] | 海量语义如何高效检索？ | 图书馆 |
+| **定制层** | [[fine-tuning\|Fine-tuning]] | 通用模型不够专精怎么办？ | 进修 |
+| **保障层** | [[harness-engineering\|Harness Engineering]] | 如何确保安全可靠？ | 安全笼 |
+| **局限层** | [[幻觉-hallucination\|AI 幻觉]] | 为什么会出错？ | 固有特性 |
 
 ## 关键洞察
 

@@ -23,7 +23,7 @@ Harness Engineering 是围绕 LLM 或 AI Agent 构建的**周边基础设施、�
 
 ## 相关来源
 
-- [[raw/articles/AI基本知识.md]]
+- [[Week1/karpathy知识库/raw/articles/AI基本知识]]
 
 ## 与其他概念的联系
 

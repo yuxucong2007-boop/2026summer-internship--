@@ -23,7 +23,7 @@ Fine-tuning（微调）是在已有的通用大模型（如 Llama 3、GPT-4）�
 
 ## 相关来源
 
-- [[raw/articles/AI基本知识.md]]
+- [[Week1/karpathy知识库/raw/articles/AI基本知识]]
 
 ## 与其他概念的联系
 

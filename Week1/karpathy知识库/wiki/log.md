@@ -22,17 +22,17 @@ updated: 2026-07-28
 ## [2026-07-28] ingest | AI基本知识 —— 大规模摄入
 
 - 原始资料：`raw/articles/AI基本知识.md`（AI 大模型生态 10 大核心概念）
-- 新建摘要：[[wiki/summaries/ai基本知识]]
+- 新建摘要：[[Week1/karpathy知识库/wiki/summaries/ai基本知识]]
 - 新建概念页（10 个）：
-  - [[wiki/concepts/llm]]
-  - [[wiki/concepts/prompt-engineering]]
-  - [[wiki/concepts/ai-agent]]
-  - [[wiki/concepts/rag]]
-  - [[wiki/concepts/mcp]]
-  - [[wiki/concepts/harness-engineering]]
-  - [[wiki/concepts/embedding]]
-  - [[wiki/concepts/vector-database]]
-  - [[wiki/concepts/fine-tuning]]
-  - [[wiki/concepts/幻觉-hallucination]]
-- 新建综合页：[[wiki/synthesis/ai-ecology]]（AI 技术栈四层架构全景）
+  - [[llm]]
+  - [[prompt-engineering]]
+  - [[ai-agent]]
+  - [[rag]]
+  - [[mcp]]
+  - [[harness-engineering]]
+  - [[embedding]]
+  - [[vector-database]]
+  - [[fine-tuning]]
+  - [[幻觉-hallucination]]
+- 新建综合页：[[ai-ecology]]（AI 技术栈四层架构全景）
 - 更新 `wiki/index.md` 反映所有新页面

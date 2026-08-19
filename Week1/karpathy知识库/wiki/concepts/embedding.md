@@ -20,7 +20,7 @@ Embedding 是将人类的文本、图片、音频等高维数据，转换成一�
 
 ## 相关来源
 
-- [[raw/articles/AI基本知识.md]]
+- [[Week1/karpathy知识库/raw/articles/AI基本知识]]
 
 ## 与其他概念的联系
 

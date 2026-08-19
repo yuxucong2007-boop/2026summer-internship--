@@ -6,71 +6,78 @@
       "items": [
         {
           "type": "group",
-          "ctime": 1785217702095,
+          "ctime": 1787120920441,
           "items": [
             {
               "type": "group",
               "ctime": 1785217702095,
               "items": [
                 {
-                  "type": "file",
+                  "type": "group",
                   "ctime": 1785217702095,
-                  "path": "AI知识库/01-AI概念/LLM⼤语⾔模型.md",
-                  "subpath": "#^-"
+                  "items": [
+                    {
+                      "type": "file",
+                      "ctime": 1785217702095,
+                      "path": "AI知识库/01-AI概念/LLM⼤语⾔模型.md",
+                      "subpath": "#^-"
+                    },
+                    {
+                      "type": "file",
+                      "ctime": 1785217702095,
+                      "path": "Week1/AI知识库/01-AI概念/Agent智能体.md",
+                      "subpath": "#^-"
+                    },
+                    {
+                      "type": "file",
+                      "ctime": 1785217702095,
+                      "path": "AI知识库/01-AI概念/RAG检索增强⽣成.md",
+                      "subpath": "#^-"
+                    },
+                    {
+                      "type": "file",
+                      "ctime": 1785217702095,
+                      "path": "Week1/AI知识库/01-AI概念/向量数据库与Embedding.md",
+                      "subpath": "#^-"
+                    },
+                    {
+                      "type": "file",
+                      "ctime": 1785217702095,
+                      "path": "Week1/AI知识库/01-AI概念/MCP协议.md",
+                      "subpath": "#^-"
+                    },
+                    {
+                      "type": "file",
+                      "ctime": 1785217702095,
+                      "path": "Week1/AI知识库/01-AI概念/Prompt Engineering.md",
+                      "subpath": "#^-"
+                    },
+                    {
+                      "type": "file",
+                      "ctime": 1785217702095,
+                      "path": "Week1/AI知识库/01-AI概念/Fine-tuning微调.md",
+                      "subpath": "#^-"
+                    }
+                  ],
+                  "title": "01-AI概念"
                 },
                 {
-                  "type": "file",
-                  "ctime": 1785217702095,
-                  "path": "AI知识库/01-AI概念/Agent智能体.md",
-                  "subpath": "#^-"
+                  "type": "group",
+                  "ctime": 1785217706927,
+                  "items": [],
+                  "title": "03-工具对比"
                 },
                 {
-                  "type": "file",
-                  "ctime": 1785217702095,
-                  "path": "AI知识库/01-AI概念/RAG检索增强⽣成.md",
-                  "subpath": "#^-"
-                },
-                {
-                  "type": "file",
-                  "ctime": 1785217702095,
-                  "path": "AI知识库/01-AI概念/向量数据库与Embedding.md",
-                  "subpath": "#^-"
-                },
-                {
-                  "type": "file",
-                  "ctime": 1785217702095,
-                  "path": "AI知识库/01-AI概念/MCP协议.md",
-                  "subpath": "#^-"
-                },
-                {
-                  "type": "file",
-                  "ctime": 1785217702095,
-                  "path": "AI知识库/01-AI概念/Prompt Engineering.md",
-                  "subpath": "#^-"
-                },
-                {
-                  "type": "file",
-                  "ctime": 1785217702095,
-                  "path": "AI知识库/01-AI概念/Fine-tuning微调.md",
-                  "subpath": "#^-"
+                  "type": "group",
+                  "ctime": 1785217706927,
+                  "items": [],
+                  "title": "04-每日日报"
                 }
               ],
-              "title": "01-AI概念"
-            },
-            {
-              "type": "group",
-              "ctime": 1785217706927,
-              "items": [],
-              "title": "03-工具对比"
-            },
-            {
-              "type": "group",
-              "ctime": 1785217706927,
-              "items": [],
-              "title": "04-每日日报"
+              "title": "\\\\AI知识库"
             }
           ],
-          "title": "AI知识库"
+          "title": "Week1"
         }
       ],
       "title": "sortspec"

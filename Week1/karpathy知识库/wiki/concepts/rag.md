@@ -23,7 +23,7 @@ RAG（Retrieval Augmented Generation）是一种将 LLM 的回答建立在**特�
 
 ## 相关来源
 
-- [[raw/articles/AI基本知识.md]]
+- [[Week1/karpathy知识库/raw/articles/AI基本知识]]
 
 ## 与其他概念的联系
 

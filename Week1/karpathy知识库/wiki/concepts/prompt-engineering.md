@@ -22,7 +22,7 @@ Prompt Engineering 是一门给大模型写指令的"说话艺术"与"技术规�
 
 ## 相关来源
 
-- [[raw/articles/AI基本知识.md]]
+- [[Week1/karpathy知识库/raw/articles/AI基本知识]]
 
 ## 与其他概念的联系
 

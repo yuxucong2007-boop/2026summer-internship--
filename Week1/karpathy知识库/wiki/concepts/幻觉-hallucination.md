@@ -24,7 +24,7 @@ AI 幻觉是指大语言模型煞有介事地**编造错误事实或虚构信息
 
 ## 相关来源
 
-- [[raw/articles/AI基本知识.md]]
+- [[Week1/karpathy知识库/raw/articles/AI基本知识]]
 
 ## 与其他概念的联系
 
