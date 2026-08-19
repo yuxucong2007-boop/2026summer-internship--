@@ -1,0 +1,2371 @@
+[
+  {
+    "query_id": "q001",
+    "query": "员工转正后有多少天年假？",
+    "category": "HR",
+    "answerable": true,
+    "expected_doc_ids": [
+      "hr_001"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 1,
+    "error": null
+  },
+  {
+    "query_id": "q002",
+    "query": "工作三年了，每年可以休几天带薪年假？",
+    "category": "HR",
+    "answerable": true,
+    "expected_doc_ids": [
+      "hr_001"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 1,
+    "error": null
+  },
+  {
+    "query_id": "q003",
+    "query": "年假没休完能不能顺延？",
+    "category": "HR",
+    "answerable": true,
+    "expected_doc_ids": [
+      "hr_001"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 1,
+    "error": null
+  },
+  {
+    "query_id": "q004",
+    "query": "连续请三天病假需要什么材料？",
+    "category": "HR",
+    "answerable": true,
+    "expected_doc_ids": [
+      "hr_002"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 2,
+    "error": null
+  },
+  {
+    "query_id": "q005",
+    "query": "每周最多可以居家办公几天？",
+    "category": "HR",
+    "answerable": true,
+    "expected_doc_ids": [
+      "hr_003"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 3,
+    "error": null
+  },
+  {
+    "query_id": "q006",
+    "query": "远程办公需要提前多久申请？",
+    "category": "HR",
+    "answerable": true,
+    "expected_doc_ids": [
+      "hr_003"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "B",
+      "A",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": false,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 2,
+    "mrr": 0.5,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 11,
+    "error": null
+  },
+  {
+    "query_id": "q007",
+    "query": "加班后多久之内要用掉调休？",
+    "category": "HR",
+    "answerable": true,
+    "expected_doc_ids": [
+      "hr_004"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 4,
+    "error": null
+  },
+  {
+    "query_id": "q008",
+    "query": "普通岗位的试用期是多长？",
+    "category": "HR",
+    "answerable": true,
+    "expected_doc_ids": [
+      "hr_005"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 5,
+    "error": null
+  },
+  {
+    "query_id": "q009",
+    "query": "技术负责人试用期是否也是三个月？",
+    "category": "HR",
+    "answerable": true,
+    "expected_doc_ids": [
+      "hr_005"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 5,
+    "error": null
+  },
+  {
+    "query_id": "q010",
+    "query": "去一线城市出差，酒店每晚最多报多少？",
+    "category": "FIN",
+    "answerable": true,
+    "expected_doc_ids": [
+      "fin_001"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "B",
+      "A",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": false,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 2,
+    "mrr": 0.5,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 14,
+    "error": null
+  },
+  {
+    "query_id": "q011",
+    "query": "其他城市出差住宿标准是多少？",
+    "category": "FIN",
+    "answerable": true,
+    "expected_doc_ids": [
+      "fin_001"
+    ],
+    "expected_segs": [
+      "A"
+    ],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 6,
+    "error": null
+  },
+  {
+    "query_id": "q012",
+    "query": "高铁能不能坐一等座？",
+    "category": "FIN",
+    "answerable": true,
+    "expected_doc_ids": [
+      "fin_002"
+    ],
+    "expected_segs": [
+      "B"
+    ],
+    "retrieved_segs": [
+      "B",
+      "A",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 1,
+    "error": null
+  },
+  {
+    "query_id": "q013",
+    "query": "网约车报销要保留哪些凭证？",
+    "category": "FIN",
+    "answerable": true,
+    "expected_doc_ids": [
+      "fin_002"
+    ],
+    "expected_segs": [
+      "B"
+    ],
+    "retrieved_segs": [
+      "B",
+      "A",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 1,
+    "error": null
+  },
+  {
+    "query_id": "q014",
+    "query": "买办公用品后多久要提交报销？",
+    "category": "FIN",
+    "answerable": true,
+    "expected_doc_ids": [
+      "fin_003",
+      "fin_004"
+    ],
+    "expected_segs": [
+      "B"
+    ],
+    "retrieved_segs": [
+      "B",
+      "A",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 2,
+    "error": null
+  },
+  {
+    "query_id": "q015",
+    "query": "报销审批的完整流程是什么？",
+    "category": "FIN",
+    "answerable": true,
+    "expected_doc_ids": [
+      "fin_004"
+    ],
+    "expected_segs": [
+      "B"
+    ],
+    "retrieved_segs": [
+      "B",
+      "A",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 3,
+    "error": null
+  },
+  {
+    "query_id": "q016",
+    "query": "发票抬头写个人可以报销吗？",
+    "category": "FIN",
+    "answerable": true,
+    "expected_doc_ids": [
+      "fin_005"
+    ],
+    "expected_segs": [
+      "B"
+    ],
+    "retrieved_segs": [
+      "B",
+      "A",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 4,
+    "error": null
+  },
+  {
+    "query_id": "q017",
+    "query": "新员工什么时候能拿到邮箱和OA账号？",
+    "category": "IT",
+    "answerable": true,
+    "expected_doc_ids": [
+      "it_001"
+    ],
+    "expected_segs": [
+      "B"
+    ],
+    "retrieved_segs": [
+      "B",
+      "A",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 5,
+    "error": null
+  },
+  {
+    "query_id": "q018",
+    "query": "公司账号密码至少要设置多少位？",
+    "category": "IT",
+    "answerable": true,
+    "expected_doc_ids": [
+      "it_002"
+    ],
+    "expected_segs": [
+      "B"
+    ],
+    "retrieved_segs": [
+      "B",
+      "C",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 6,
+    "error": null
+  },
+  {
+    "query_id": "q019",
+    "query": "密码输错几次会被锁定？锁多久？",
+    "category": "IT",
+    "answerable": true,
+    "expected_doc_ids": [
+      "it_003"
+    ],
+    "expected_segs": [
+      "B"
+    ],
+    "retrieved_segs": [
+      "B",
+      "C",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 7,
+    "error": null
+  },
+  {
+    "query_id": "q020",
+    "query": "电脑坏了应该去哪里报修？",
+    "category": "IT",
+    "answerable": true,
+    "expected_doc_ids": [
+      "it_004"
+    ],
+    "expected_segs": [
+      "B"
+    ],
+    "retrieved_segs": [
+      "B",
+      "A",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 8,
+    "error": null
+  },
+  {
+    "query_id": "q021",
+    "query": "基础版云盘有多大容量？单个文件多大？",
+    "category": "PRODUCT",
+    "answerable": true,
+    "expected_doc_ids": [
+      "prod_001"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "B",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 1,
+    "error": null
+  },
+  {
+    "query_id": "q022",
+    "query": "回收站里的文件会永久保存吗？",
+    "category": "PRODUCT",
+    "answerable": true,
+    "expected_doc_ids": [
+      "prod_001"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "B",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 1,
+    "error": null
+  },
+  {
+    "query_id": "q023",
+    "query": "外部共享链接默认多久失效？",
+    "category": "PRODUCT",
+    "answerable": true,
+    "expected_doc_ids": [
+      "prod_002"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "B",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 2,
+    "error": null
+  },
+  {
+    "query_id": "q024",
+    "query": "API每分钟最多能调用多少次？超限返回什么？",
+    "category": "PRODUCT",
+    "answerable": true,
+    "expected_doc_ids": [
+      "prod_003"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "A",
+      "B"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 3,
+    "error": null
+  },
+  {
+    "query_id": "q025",
+    "query": "API密钥可以直接放在前端代码里吗？",
+    "category": "PRODUCT",
+    "answerable": true,
+    "expected_doc_ids": [
+      "prod_004"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "A",
+      "B"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 4,
+    "error": null
+  },
+  {
+    "query_id": "q026",
+    "query": "基础版客户普通工单多久响应？",
+    "category": "CUSTOMER_SERVICE",
+    "answerable": true,
+    "expected_doc_ids": [
+      "cs_001"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "B",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 5,
+    "error": null
+  },
+  {
+    "query_id": "q027",
+    "query": "基础版订阅付款后第十天还能退款吗？",
+    "category": "CUSTOMER_SERVICE",
+    "answerable": true,
+    "expected_doc_ids": [
+      "cs_002"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "B",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 6,
+    "error": null
+  },
+  {
+    "query_id": "q028",
+    "query": "数据导出链接过期后怎么办？",
+    "category": "CUSTOMER_SERVICE",
+    "answerable": true,
+    "expected_doc_ids": [
+      "cs_003"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "B",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 7,
+    "error": null
+  },
+  {
+    "query_id": "q029",
+    "query": "可以把客户名单发到自己的私人邮箱吗？",
+    "category": "SECURITY",
+    "answerable": true,
+    "expected_doc_ids": [
+      "sec_001"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "B",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 8,
+    "error": null
+  },
+  {
+    "query_id": "q030",
+    "query": "发现客户数据误发后应该怎么处理？",
+    "category": "SECURITY",
+    "answerable": true,
+    "expected_doc_ids": [
+      "sec_002"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "B",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 9,
+    "error": null
+  },
+  {
+    "query_id": "q031",
+    "query": "公司明年会不会涨薪？",
+    "category": "NO_ANSWER",
+    "answerable": false,
+    "expected_doc_ids": [],
+    "expected_segs": [],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": false,
+    "hit2": false,
+    "hit3": false,
+    "first_correct_rank": null,
+    "mrr": 0.0,
+    "soft_hit_chunk": false,
+    "first_chunk_rank": null,
+    "error": null
+  },
+  {
+    "query_id": "q032",
+    "query": "星河科技今年的股票代码是什么？",
+    "category": "NO_ANSWER",
+    "answerable": false,
+    "expected_doc_ids": [],
+    "expected_segs": [],
+    "retrieved_segs": [
+      "A",
+      "C",
+      "B"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      }
+    ],
+    "hit1": false,
+    "hit2": false,
+    "hit3": false,
+    "first_correct_rank": null,
+    "mrr": 0.0,
+    "soft_hit_chunk": false,
+    "first_chunk_rank": null,
+    "error": null
+  },
+  {
+    "query_id": "q033",
+    "query": "员工餐厅每天几点供应晚餐？",
+    "category": "NO_ANSWER",
+    "answerable": false,
+    "expected_doc_ids": [],
+    "expected_segs": [],
+    "retrieved_segs": [
+      "A",
+      "B",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": false,
+    "hit2": false,
+    "hit3": false,
+    "first_correct_rank": null,
+    "mrr": 0.0,
+    "soft_hit_chunk": false,
+    "first_chunk_rank": null,
+    "error": null
+  },
+  {
+    "query_id": "q034",
+    "query": "如果报销超过30天才提交，一定会被拒绝吗？",
+    "category": "BOUNDARY",
+    "answerable": true,
+    "expected_doc_ids": [
+      "fin_004"
+    ],
+    "expected_segs": [
+      "B"
+    ],
+    "retrieved_segs": [
+      "B",
+      "A",
+      "C"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      },
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 3,
+    "error": null
+  },
+  {
+    "query_id": "q035",
+    "query": "客户合同里约定的退款时间和基础版规则冲突时听谁的？",
+    "category": "BOUNDARY",
+    "answerable": true,
+    "expected_doc_ids": [
+      "cs_002"
+    ],
+    "expected_segs": [
+      "C"
+    ],
+    "retrieved_segs": [
+      "C",
+      "B",
+      "A"
+    ],
+    "retrieved_ranked": [
+      {
+        "seg": "C",
+        "chunk_ids": [
+          "prod_001",
+          "prod_002",
+          "prod_003",
+          "prod_004",
+          "cs_001",
+          "cs_002",
+          "cs_003",
+          "sec_001",
+          "sec_002"
+        ],
+        "len": 1196
+      },
+      {
+        "seg": "B",
+        "chunk_ids": [
+          "fin_002",
+          "fin_003",
+          "fin_004",
+          "fin_005",
+          "it_001",
+          "it_002",
+          "it_003",
+          "it_004"
+        ],
+        "len": 1004
+      },
+      {
+        "seg": "A",
+        "chunk_ids": [
+          "hr_001",
+          "hr_002",
+          "hr_003",
+          "hr_004",
+          "hr_005",
+          "fin_001"
+        ],
+        "len": 1048
+      }
+    ],
+    "hit1": true,
+    "hit2": true,
+    "hit3": true,
+    "first_correct_rank": 1,
+    "mrr": 1.0,
+    "soft_hit_chunk": true,
+    "first_chunk_rank": 6,
+    "error": null
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "total_queries": 35,
+  "answerable_evaluated": 32,
+  "noanswer_evaluated": 3,
+  "Hit@1_segment": 0.9375,
+  "Hit@2_segment": 1.0,
+  "Hit@3_segment": 1.0,
+  "Recall@1_segment": 0.9375,
+  "Recall@3_segment": 1.0,
+  "MRR_segment": 0.9688,
+  "soft_hit_chunk_anypos": 1.0,
+  "noanswer_false_recall_rate": 1.0,
+  "full_return_rate": 1.0,
+  "tested_at": "2026-08-18 12:11:24",
+  "kb_id": "9e5dbbec-6c08-47f3-b2bb-59a3cc8cfed2",
+  "model": "kpc.deepseek-v4-pro"
+}
