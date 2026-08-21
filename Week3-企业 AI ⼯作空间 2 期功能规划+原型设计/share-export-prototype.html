@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>分享与导出功能原型 · Kmind</title>
+<meta name="viewport" content="width=1280">
+<style>
+:root{
+  --brand-500:#1E88FF;--brand-600:#1976E2;--brand-100:#E8F2FF;--brand-50:#F4F8FF;
+  --bg-page:#FFFFFF;--bg-sidebar:#F7F8FA;--bg-card:#FFFFFF;--bg-hover:#F2F4F7;
+  --border-1:#EBEDF0;--border-2:#D9DDE3;
+  --text-primary:#1F2329;--text-secondary:#4E5969;--text-tertiary:#86909C;--text-disabled:#C9CDD4;
+  --success:#22C55E;--warning:#F59E0B;--danger:#EF4444;--info:#3B82F6;
+  --radius-s:4px;--radius-m:6px;--radius-l:8px;--radius-xl:12px;
+  --sh-1:0 2px 8px rgba(0,0,0,.06);--sh-2:0 8px 24px rgba(0,0,0,.08);--sh-3:0 16px 48px rgba(0,0,0,.12);
+}
+[data-theme="dark"]{
+  --bg-page:#202225;--bg-sidebar:#1A1B1E;--bg-card:#2A2D31;--bg-hover:#33363B;
+  --border-1:#33363B;--border-2:#454850;
+  --text-primary:#E5E7EB;--text-secondary:#A1A6B0;--text-tertiary:#6B7280;--text-disabled:#4B5563;
+  --brand-500:#3B92FF;--brand-100:rgba(59,146,255,.15);--brand-50:rgba(59,146,255,.08);
+  --sh-1:0 2px 8px rgba(0,0,0,.4);--sh-2:0 8px 24px rgba(0,0,0,.5);--sh-3:0 16px 48px rgba(0,0,0,.6);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#EEF1F5;color:var(--text-primary);font-family:"PingFang SC","Microsoft YaHei",Inter,-apple-system,"SF Pro Text",Segoe UI,sans-serif;font-size:14px;line-height:22px;-webkit-font-smoothing:antialiased}
+[data-theme="dark"] body{background:#0F1115}
+
+.app-shell{width:1280px;height:820px;margin:20px auto;background:var(--bg-page);border-radius:14px;overflow:hidden;box-shadow:var(--sh-3);display:flex;flex-direction:column;border:1px solid var(--border-1)}
+.titlebar{height:36px;background:var(--bg-sidebar);border-bottom:1px solid var(--border-1);display:flex;align-items:center;padding:0 14px;gap:8px;flex:none}
+.tlights{display:flex;gap:6px}.tlights span{width:12px;height:12px;border-radius:50%;display:block}
+.tl-r{background:#FF5F57}.tl-y{background:#FEBC2E}.tl-g{background:#28C840}
+.titlebar-title{font-size:12px;color:var(--text-tertiary);margin-left:4px}
+.titlebar-title b{color:var(--text-secondary);font-weight:600}
+.titlebar-spacer{flex:1}
+.theme-btn{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 10px;border-radius:999px;background:var(--bg-hover);font-size:12px;color:var(--text-secondary);cursor:pointer;border:1px solid var(--border-1)}
+
+.main{flex:1;display:flex;min-height:0}
+.sidebar{width:280px;background:var(--bg-sidebar);border-right:1px solid var(--border-1);display:flex;flex-direction:column;padding:16px 12px;gap:8px;flex:none;overflow-y:auto}
+.content{flex:1;display:flex;flex-direction:column;min-width:0}
+
+.chat-item{padding:12px;border-radius:var(--radius-m);cursor:pointer;border:1px solid transparent;transition:all .15s;position:relative}
+.chat-item:hover{background:var(--bg-hover);border-color:var(--border-1)}
+.chat-item.active{background:var(--brand-50);border-color:var(--brand-500)}
+.chat-title{font-size:14px;font-weight:500;color:var(--text-primary);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.chat-meta{font-size:12px;color:var(--text-tertiary)}
+
+.chat-header{padding:16px 24px;border-bottom:1px solid var(--border-1);display:flex;align-items:center;gap:12px}
+.chat-header-title{flex:1;font-size:16px;font-weight:600;color:var(--text-primary)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 16px;border-radius:var(--radius-m);font-size:14px;font-weight:500;cursor:pointer;border:1px solid transparent;transition:background .15s,border-color .15s,color .15s;white-space:nowrap}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-primary{background:var(--brand-500);color:#fff}
+.btn-primary:hover:not(:disabled){background:var(--brand-600)}
+.btn-secondary{background:var(--bg-page);color:var(--text-primary);border-color:var(--border-2)}
+.btn-secondary:hover:not(:disabled){background:var(--bg-hover)}
+.btn-sm{padding:6px 12px;font-size:13px}
+
+.chat-body{flex:1;overflow-y:auto;padding:24px}
+.message-group{margin-bottom:24px}
+.message{display:flex;gap:12px;margin-bottom:16px}
+.message-avatar{width:36px;height:36px;border-radius:50%;background:var(--bg-hover);flex:none;display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--text-secondary)}
+.message-content{flex:1;min-width:0}
+.message-author{font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:4px}
+.message-text{font-size:14px;color:var(--text-primary);line-height:1.6}
+
+.toast{position:fixed;top:60px;left:50%;transform:translateX(-50%);min-width:320px;max-width:480px;padding:14px 18px;border-radius:var(--radius-l);box-shadow:var(--sh-2);display:flex;align-items:center;gap:12px;font-size:14px;z-index:9999;animation:slideDown .3s ease-out}
+@keyframes slideDown{from{transform:translate(-50%,-20px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
+.toast-success{background:#22C55E;color:#fff}
+.toast-error{background:#EF4444;color:#fff}
+.toast-loading{background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border-1)}
+.toast-icon{font-size:18px;flex:none}
+.toast-content{flex:1}
+.toast-title{font-weight:600;margin-bottom:2px}
+.toast-desc{font-size:12px;opacity:.9}
+.toast-action{margin-left:auto}
+.btn-toast{padding:4px 10px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);border-radius:var(--radius-s);font-size:12px;color:#fff;cursor:pointer}
+.btn-toast:hover{background:rgba(255,255,255,.3)}
+
+.spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+[data-theme="dark"] .toast-loading .spinner{border-color:var(--border-2);border-top-color:var(--brand-500)}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:10000;display:flex;align-items:center;justify-content:center;animation:fadeIn .2s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal{background:var(--bg-card);border-radius:var(--radius-xl);box-shadow:var(--sh-3);width:480px;max-width:90vw;overflow:hidden;animation:modalSlide .3s ease-out}
+@keyframes modalSlide{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-header{padding:20px 24px;border-bottom:1px solid var(--border-1);display:flex;align-items:center;gap:12px}
+.modal-title{flex:1;font-size:16px;font-weight:600;color:var(--text-primary)}
+.modal-close{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-s);cursor:pointer;color:var(--text-tertiary);background:transparent;border:none}
+.modal-close:hover{background:var(--bg-hover);color:var(--text-primary)}
+.modal-body{padding:24px;max-height:60vh;overflow-y:auto}
+.modal-footer{padding:16px 24px;border-top:1px solid var(--border-1);display:flex;gap:12px;justify-content:flex-end}
+
+.export-option{padding:14px;border:1px solid var(--border-2);border-radius:var(--radius-m);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.export-option:hover{background:var(--bg-hover);border-color:var(--brand-500)}
+.export-option.selected{background:var(--brand-50);border-color:var(--brand-500)}
+.export-icon{width:40px;height:40px;border-radius:var(--radius-m);background:var(--bg-hover);display:flex;align-items:center;justify-content:center;font-size:18px;flex:none}
+.export-info{flex:1}
+.export-name{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:2px}
+.export-desc{font-size:12px;color:var(--text-tertiary)}
+</style>
+</head>
+<body>
+
+<div class="app-shell">
+  <div class="titlebar">
+    <div class="tlights"><span class="tl-r"></span><span class="tl-y"></span><span class="tl-g"></span></div>
+    <div class="titlebar-title"><b>分享与导出功能</b> · 交互原型演示</div>
+    <div class="titlebar-spacer"></div>
+    <button class="theme-btn" onclick="toggleTheme()">
+      <span id="theme-icon">🌙</span>
+      <span id="theme-text">暗色</span>
+    </button>
+  </div>
+
+  <div class="main">
+    <div class="sidebar">
+      <div class="chat-item active" onclick="selectChat(this)">
+        <div class="chat-title">
+          📊 市场分析报告
+        </div>
+        <div class="chat-meta">今天 14:32 · 12条对话</div>
+      </div>
+      <div class="chat-item" onclick="selectChat(this)">
+        <div class="chat-title">
+          💡 产品规划讨论
+        </div>
+        <div class="chat-meta">昨天 16:45 · 8条对话</div>
+      </div>
+      <div class="chat-item" onclick="selectChat(this)">
+        <div class="chat-title">
+          📝 技术方案设计
+        </div>
+        <div class="chat-meta">2天前 · 15条对话</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="chat-header">
+        <div class="chat-header-title">📊 市场分析报告</div>
+        <button class="btn btn-secondary btn-sm" onclick="showShareModal()">
+          🔗 分享
+        </button>
+        <button class="btn btn-secondary btn-sm" onclick="showExportModal()">
+          📥 导出
+        </button>
+      </div>
+
+      <div class="chat-body">
+        <div class="message-group">
+          <div class="message">
+            <div class="message-avatar">U</div>
+            <div class="message-content">
+              <div class="message-author">用户</div>
+              <div class="message-text">请帮我分析一下当前AI工具市场的竞争格局</div>
+            </div>
+          </div>
+
+          <div class="message">
+            <div class="message-avatar" style="background:var(--brand-100);color:var(--brand-500)">AI</div>
+            <div class="message-content">
+              <div class="message-author">AI助手</div>
+              <div class="message-text">
+                好的,我来为您分析当前AI工具市场的竞争格局:<br><br>
+                <strong>1. 市场规模与增长</strong><br>
+                全球AI工具市场预计在2026年达到1250亿美元,年复合增长率约为32%。企业级AI工具占据主要份额。<br><br>
+                <strong>2. 主要竞争者</strong><br>
+                • OpenAI (ChatGPT) - 领先的对话式AI平台<br>
+                • Google (Gemini) - 搜索巨头的AI布局<br>
+                • Anthropic (Claude) - 注重安全性的AI助手<br>
+                • Microsoft (Copilot) - 深度集成办公场景<br><br>
+                <strong>3. 市场趋势</strong><br>
+                垂直领域定制化、企业私有化部署、多模态能力成为关键差异化竞争点。
+              </div>
+            </div>
+          </div>
+
+          <div class="message">
+            <div class="message-avatar">U</div>
+            <div class="message-content">
+              <div class="message-author">用户</div>
+              <div class="message-text">这份分析很有价值,我想分享给团队成员</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast 容器 -->
+<div id="toast-container"></div>
+
+<!-- 分享模态框 -->
+<div id="share-modal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">🔗 分享对话</div>
+      <button class="modal-close" onclick="closeModal('share-modal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="color:var(--text-secondary);margin-bottom:20px">生成分享链接后,任何拥有链接的人都可以查看此对话内容</p>
+      <div style="padding:14px;background:var(--bg-hover);border-radius:var(--radius-m);font-family:monospace;font-size:13px;color:var(--text-secondary);margin-bottom:16px">
+        链接将在此显示...
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('share-modal')">取消</button>
+      <button class="btn btn-primary" onclick="generateShareLink()">生成链接</button>
+    </div>
+  </div>
+</div>
+
+<!-- 导出模态框 -->
+<div id="export-modal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">📥 导出对话</div>
+      <button class="modal-close" onclick="closeModal('export-modal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="color:var(--text-secondary);margin-bottom:20px">选择导出格式</p>
+
+      <div class="export-option" onclick="selectExportFormat(this, 'pdf')">
+        <div class="export-icon">📄</div>
+        <div class="export-info">
+          <div class="export-name">PDF 文档</div>
+          <div class="export-desc">适合打印和正式分享,保留完整格式</div>
+        </div>
+      </div>
+
+      <div class="export-option" onclick="selectExportFormat(this, 'markdown')">
+        <div class="export-icon">📝</div>
+        <div class="export-info">
+          <div class="export-name">Markdown 文件</div>
+          <div class="export-desc">纯文本格式,便于编辑和版本控制</div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('export-modal')">取消</button>
+      <button class="btn btn-primary" id="export-btn" onclick="startExport()" disabled>导出</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let selectedFormat = null;
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('theme-icon').textContent = isDark ? '🌙' : '☀️';
+  document.getElementById('theme-text').textContent = isDark ? '暗色' : '亮色';
+}
+
+function selectChat(elem) {
+  document.querySelectorAll('.chat-item').forEach(item => item.classList.remove('active'));
+  elem.classList.add('active');
+}
+
+function showShareModal() {
+  document.getElementById('share-modal').style.display = 'flex';
+}
+
+function showExportModal() {
+  document.getElementById('export-modal').style.display = 'flex';
+  selectedFormat = null;
+  document.querySelectorAll('.export-option').forEach(opt => opt.classList.remove('selected'));
+  document.getElementById('export-btn').disabled = true;
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+function selectExportFormat(elem, format) {
+  document.querySelectorAll('.export-option').forEach(opt => opt.classList.remove('selected'));
+  elem.classList.add('selected');
+  selectedFormat = format;
+  document.getElementById('export-btn').disabled = false;
+}
+
+function showToast(type, title, desc, actionText, actionCallback) {
+  const container = document.getElementById('toast-container');
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+
+  let icon = '';
+  if (type === 'loading') icon = '<div class="spinner"></div>';
+  else if (type === 'success') icon = '✓';
+  else if (type === 'error') icon = '✕';
+
+  let actionBtn = '';
+  if (actionText) {
+    actionBtn = `<div class="toast-action"><button class="btn-toast" onclick="(${actionCallback.toString()})()">${actionText}</button></div>`;
+  }
+
+  toast.innerHTML = `
+    <div class="toast-icon">${icon}</div>
+    <div class="toast-content">
+      <div class="toast-title">${title}</div>
+      ${desc ? `<div class="toast-desc">${desc}</div>` : ''}
+    </div>
+    ${actionBtn}
+  `;
+
+  container.innerHTML = '';
+  container.appendChild(toast);
+
+  if (type !== 'loading') {
+    setTimeout(() => {
+      toast.style.animation = 'fadeIn .3s reverse';
+      setTimeout(() => toast.remove(), 300);
+    }, 3000);
+  }
+
+  return toast;
+}
+
+function generateShareLink() {
+  closeModal('share-modal');
+
+  // 状态1: 进行中
+  const loadingToast = showToast('loading', '正在生成分享链接...', '请稍候');
+
+  // 模拟网络请求
+  setTimeout(() => {
+    loadingToast.remove();
+
+    // 随机模拟成功或失败 (80%成功率)
+    if (Math.random() > 0.2) {
+      // 状态2: 成功
+      const shareUrl = `https://kmind.app/share/${Math.random().toString(36).substr(2, 9)}`;
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        showToast('success', '链接已复制到剪贴板', shareUrl);
+      });
+    } else {
+      // 状态3: 失败
+      showToast('error', '生成失败', '网络连接超时,请重试', '重试', generateShareLink);
+    }
+  }, 2000);
+}
+
+function startExport() {
+  if (!selectedFormat) return;
+
+  closeModal('export-modal');
+
+  const formatName = selectedFormat === 'pdf' ? 'PDF' : 'Markdown';
+
+  // 状态1: 进行中
+  const loadingToast = showToast('loading', `正在导出${formatName}...`, '请稍候');
+
+  // 模拟导出过程
+  setTimeout(() => {
+    loadingToast.remove();
+
+    // 随机模拟成功或失败 (80%成功率)
+    if (Math.random() > 0.2) {
+      // 状态2: 成功
+      const fileName = `市场分析报告.${selectedFormat === 'pdf' ? 'pdf' : 'md'}`;
+      showToast('success', '导出成功', fileName, '打开文件位置', () => {
+        alert('在实际应用中,这里会打开文件所在文件夹');
+      });
+    } else {
+      // 状态3: 失败
+      showToast('error', '导出失败', '文件写入错误,请重试', '重试', startExport);
+    }
+  }, 2500);
+}
+
+// 点击模态框背景关闭
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal-overlay')) {
+    e.target.style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
