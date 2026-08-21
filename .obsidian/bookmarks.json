@@ -25,7 +25,7 @@
                     {
                       "type": "file",
                       "ctime": 1785217702095,
-                      "path": "Week1/AI知识库/01-AI概念/Agent智能体.md",
+                      "path": "Week1-AI工具上手+知识库搭建/AI知识库/01-AI概念/Agent智能体.md",
                       "subpath": "#^-"
                     },
                     {
@@ -37,25 +37,25 @@
                     {
                       "type": "file",
                       "ctime": 1785217702095,
-                      "path": "Week1/AI知识库/01-AI概念/向量数据库与Embedding.md",
+                      "path": "Week1-AI工具上手+知识库搭建/AI知识库/01-AI概念/向量数据库与Embedding.md",
                       "subpath": "#^-"
                     },
                     {
                       "type": "file",
                       "ctime": 1785217702095,
-                      "path": "Week1/AI知识库/01-AI概念/MCP协议.md",
+                      "path": "Week1-AI工具上手+知识库搭建/AI知识库/01-AI概念/MCP协议.md",
                       "subpath": "#^-"
                     },
                     {
                       "type": "file",
                       "ctime": 1785217702095,
-                      "path": "Week1/AI知识库/01-AI概念/Prompt Engineering.md",
+                      "path": "Week1-AI工具上手+知识库搭建/AI知识库/01-AI概念/Prompt Engineering.md",
                       "subpath": "#^-"
                     },
                     {
                       "type": "file",
                       "ctime": 1785217702095,
-                      "path": "Week1/AI知识库/01-AI概念/Fine-tuning微调.md",
+                      "path": "Week1-AI工具上手+知识库搭建/AI知识库/01-AI概念/Fine-tuning微调.md",
                       "subpath": "#^-"
                     }
                   ],
@@ -77,7 +77,7 @@
               "title": "\\\\AI知识库"
             }
           ],
-          "title": "Week1"
+          "title": "Week1-AI工具上手+知识库搭建"
         }
       ],
       "title": "sortspec"
